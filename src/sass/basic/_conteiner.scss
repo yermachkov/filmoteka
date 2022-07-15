@@ -1,0 +1,21 @@
+.conteiner {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  text-align: left;
+
+  @include mobile {
+    width: 480px;
+  }
+
+  @include tabl {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include desk {
+    width: 1280px;
+  }
+}
