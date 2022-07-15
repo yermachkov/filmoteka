@@ -1,1 +1,7 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+@import './basic.scss/reset';
+@import './basic.scss/main-style';
+@import './utils/variables';
+@import './utils/mixins.scss';
+@import './basic.scss/conteiner';
