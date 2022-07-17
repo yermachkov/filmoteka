@@ -9,13 +9,14 @@
 
 .gallery__list {
   margin-bottom: -20px;
-  width: inherit;
+  width: 100%;
 
   @include tabl {
     display: flex;
     flex-wrap: wrap;
     margin-right: -32px;
     margin-bottom: -32px;
+    width: inherit;
   }
   
   @include desk {
@@ -24,6 +25,9 @@
 }
 
 .gallery__item {
+  background-color: aqua;
+  height: 500px;
+
   align-items: center;
   text-align: left;
   margin-bottom: 20px;
@@ -34,10 +38,10 @@
     @include tabl {
       margin-right: 32px;
       margin-bottom: 32px;
-      width: calc(100% / 2 - 32px);
+      width: calc(100% / 2 - 48px);
     }
     @include desk {
       margin-right: 16px;
-      width: calc(100% / 3 - 16px);
+      width: calc(100% / 3 - 32px);
     }
   }
