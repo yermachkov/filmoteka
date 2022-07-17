@@ -9,6 +9,7 @@ export default class FilmsApiService {
     this.searchQuery = "";
     this.page = 1;
     this.genreId = null;
+    this.movieId = null;
   }
 
   async fetchTrendingFilms() {
@@ -16,10 +17,10 @@ export default class FilmsApiService {
       const response = await axios.get(`/trending/movie/day?api_key=${API_KEY}`);
       return response.data;
       // returns an Object which contains { page, Array(20 items), total_pages, total_results}. 
-  } catch (error) {
+    } catch (error) {
     console.error(error);
-  }
-  }
+    }
+  };
 
   async fetchFilmsOnSearch() {
     try {
@@ -30,7 +31,7 @@ export default class FilmsApiService {
     catch (error) {
       console.error(error);
     }
-  }
+  };
 
   async fetchGeneres() {
     try {
@@ -40,7 +41,25 @@ export default class FilmsApiService {
     catch (error) {
       console.error(error);
     };
-  }
+    };
+
+  async fetchFilmById() {
+    try {
+      const response = await axios.get(`/movie/${this.movieId}?api_key=${API_KEY}`);
+      return response.data;
+    }
+    catch (error) {
+      console.error(error);
+    };
+  };
+
+  resetPage() {
+    this.page = 1;
+  };
+
+  pageIncrement() {
+    this.page += 1;
+  };
 
   get query() {
       return this.searchQuery;
@@ -48,10 +67,13 @@ export default class FilmsApiService {
 
   set query(newQuery) {
       this.searchQuery = newQuery;
-    }
+  };
   
+  get id() {
+    return this.movieId;
+  };
+  
+  set id(newId) {
+    this.movieId = newId;
+  };
 };
-
-
-
-
