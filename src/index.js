@@ -1,6 +1,6 @@
 import FilmsApiService from './js/fetch-api';
 import { cardMurkup } from './js/cardMurkup';
-import onButtonClick from './js/current-button';
+import onHeaderBtnClick from './js/current-header-button';
 
 
 const filmsApi = new FilmsApiService();
@@ -13,7 +13,7 @@ const refs = {
 }
 
 refs.searchForm.addEventListener('submit', onSearch);
-refs.headerButtons.addEventListener('click', onButtonClick);
+refs.headerButtons.addEventListener('click', onHeaderBtnClick);
 
 
 

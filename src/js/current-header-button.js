@@ -1,4 +1,4 @@
-export default function onButtonClick(e){
+export default function onHeaderBtnClick(e){
     if(e.target.nodeName !== 'BUTTON'){
         return
     }
