@@ -1,8 +1,9 @@
 import FilmsApiService from './js/fetch-api';
-import { cardMurkup } from './js/cardMurkup';
 import pagination from './js/pagination';
 import { createHomeCardsMarkup } from './js/createMarkup';
 import './js/footerModal';
+import './js/spinner';
+
 const filmsApi = new FilmsApiService();
 
 const refs = {
