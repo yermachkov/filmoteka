@@ -6,7 +6,7 @@ const filmsApi = new FilmsApiService();
 const refs = {
     searchForm: document.querySelector('.header-form'),
     searchButton: document.querySelector('.header-form__btn'),
-    filmCard: document.querySelector('.gallery'),
+    gallery: document.querySelector('.gallery__list'),
 }
 
 // refs.searchForm.addEventListener('submit', onSearch);
@@ -16,7 +16,7 @@ filmsApi.fetchTrendingFilms().then(response => {
 })
 
 function renderHomeGallery(markup) {
-    refs.filmCard.insertAdjacentHTML('beforeend', createHomeCardsMarkup(markup));
+    refs.gallery.insertAdjacentHTML('beforeend', createHomeCardsMarkup(markup));
 }
 
 
