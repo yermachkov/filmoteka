@@ -65,11 +65,11 @@ export default class FilmsApiService {
     this.page -= 1;
 }
 
-  get page() {
+  getPage() {
     return this.page;
   };
 
-  set page(newPage) {
+  setPage(newPage) {
     this.page = newPage;
   }
   
