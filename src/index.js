@@ -1,6 +1,7 @@
 import FilmsApiService from './js/fetch-api';
 import { cardMurkup } from './js/cardMurkup';
 import pagination from './js/pagination';
+import { createHomeCardsMarkup } from './js/createMarkup';
 
 const filmsApi = new FilmsApiService();
 
@@ -8,7 +9,18 @@ const refs = {
   searchForm: document.querySelector('.header-form'),
   searchButton: document.querySelector('.header-form__btn'),
   filmCard: document.querySelector('.gallery'),
+  gallery: document.querySelector('.gallery__list'),
 };
+
+// refs.searchForm.addEventListener('submit', onSearch);
+
+filmsApi.fetchTrendingFilms().then(response => {
+    renderHomeGallery(response.results);
+})
+
+function renderHomeGallery(markup) {
+    refs.gallery.insertAdjacentHTML('beforeend', createHomeCardsMarkup(markup));
+}
 
 const ulTag = document.querySelector('ul');
 // console.log(pagination);

@@ -1,43 +1,60 @@
-.info-title {
-    margin-top: 0;
-        margin-bottom: 0;
-        font-size: 20px;
-        line-height: calc(24 / 20);
-        text-transform: uppercase;
-        color: #000000;     
-}
-
 .gallery__list {
-  margin-bottom: -20px;
-  width: inherit;
+margin-left: auto;
+margin-right: auto;
 
   @include tabl {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -32px;
-    margin-bottom: -32px;
+    gap: 32px;
   }
   
   @include desk {
-    margin-right: -16px;
+    gap: 16px;
   }
 }
 
 .gallery__item {
-  align-items: center;
-  text-align: left;
-  margin-bottom: 20px;
-  width: 100%;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-            0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  
-    @include tabl {
-      margin-right: 32px;
-      margin-bottom: 32px;
-      width: calc(100% / 2 - 32px);
+  &:not(:last-child) {
+      @media screen and (max-width: 768px) {
+        margin-bottom: 20px;
+      }
     }
-    @include desk {
-      margin-right: 16px;
-      width: calc(100% / 3 - 16px);
-    }
+
+  @include tabl {
+    width: calc((100% - 32px) / 2);
   }
+  @include desk {
+    width: calc((100% - 32px) / 3);
+  }
+}
+
+.gallery__item:hover,
+.gallery__item:focus {
+box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.gallery__image {
+  display: block;
+  height: 402px;
+  width: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+
+  @include tabl {
+  height: 455px;
+  }
+
+  @include desk {
+  height: 574px;
+  }
+
+}
+
+.info-title {
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  text-transform: uppercase;
+  color: #000000;
+}
