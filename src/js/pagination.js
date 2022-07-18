@@ -8,12 +8,10 @@ let page = fetchApi.page;
 export default function element(totalPages, page) {
   let liTag = '';
   let activeLi;
-  let beforePages = page - 1;
-  let afterPages = page + 1;
+  let beforePages = page - 2;
+  let afterPages = page + 2;
   if (page > 1) {
-    liTag += `<li class="arrow-left" onclick="element(totalPages, ${
-      page - 1
-    }) ">
+    liTag += `<li class="arrow-left" onclick="element(totalPages, ${page - 1})">
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path
               d="M12.667 8H3.333M8 12.667 3.333 8 8 3.333"
@@ -25,9 +23,9 @@ export default function element(totalPages, page) {
         </li>`;
   }
 
-  if (page > 2) {
+  if (page > 2 && page != 3) {
     liTag += `<li class="numb" onclick="element(totalPages, 1)"><span>1</span></li>`;
-    if (page > 3) {
+    if (page > 4) {
       liTag += `<li class="dots"><span>. . .</span></li>`;
     }
   }
@@ -45,7 +43,7 @@ export default function element(totalPages, page) {
   }
 
   for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
-    if (pageLength > totalPages) {
+    if (pageLength > totalPages || pageLength < 1) {
       continue;
     }
 
@@ -61,8 +59,8 @@ export default function element(totalPages, page) {
     liTag += `<li class="numb ${activeLi}" onclick="element(totalPages, ${pageLength})"><span>${pageLength}</span></li>`;
   }
 
-  if (page < totalPages - 1) {
-    if (page < totalPages - 2) {
+  if (page < totalPages - 1 && page != totalPages - 2) {
+    if (page < totalPages - 3) {
       liTag += `<li class="dots"><span>. . .</span></li>`;
     }
     liTag += `<li class="numb" onclick="element(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
@@ -71,7 +69,7 @@ export default function element(totalPages, page) {
   if (page < totalPages) {
     liTag += `<li class="arrow-right" onclick="element(totalPages, ${
       page + 1
-    })" >
+    })">
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path
               d="M3.333 8h9.334M8 12.667 12.667 8 8 3.333"
