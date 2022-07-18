@@ -1,6 +1,7 @@
 import FilmsApiService from './js/fetch-api';
 import pagination from './js/pagination';
 import { createHomeCardsMarkup } from './js/createMarkup';
+import './js/footerModal';
 import './js/spinner';
 
 const filmsApi = new FilmsApiService();
@@ -48,3 +49,5 @@ filmsApi.fetchTrendingFilms().then(r => {
 //     });
 
 // }
+
+
