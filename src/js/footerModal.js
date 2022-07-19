@@ -1,7 +1,7 @@
 const refs = {
     openFooterModal: document.querySelector('[data-action="open-modal"]'),
     closeFooterModal: document.querySelector('[data-action="close-modal"]'),
-    footerModal: document.querySelector('.footer__modal'),
+    // footerModal: document.querySelector('.footer__modal'),
     footerModalOverlay: document.querySelector('.footer__modal-overlay')
 };
 
@@ -11,12 +11,12 @@ refs.footerModalOverlay.addEventListener('click', onOverlayClick);
 
 function onOpenModal() {
     window.addEventListener('keydown',onEscKeyPress);
-    refs.footerModal.classList.remove('is-hidden-footer');     
+    refs.footerModalOverlay.classList.remove('is-hidden-footer');     
 }
 
 function onCloseModal() {
     window.removeEventListener('keydown',onEscKeyPress);
-    refs.footerModal.classList.add('is-hidden-footer');    
+    refs.footerModalOverlay.classList.add('is-hidden-footer');    
 }
 
 function onOverlayClick(event) {
