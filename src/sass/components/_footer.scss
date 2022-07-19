@@ -60,8 +60,11 @@
         right: 0;
         left: 0;
         bottom: 0;
-        background-color: rgba($color: gray, $alpha: 0.5);
 
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        background-color: rgba($color: gray, $alpha: 0.5);
         transition: all 0.8s ease 0s;
     }
         
@@ -78,6 +81,12 @@
             width: 700px;
             height: 500px;    
         }
+
+        @media screen and (min-width: 1280px) {
+            width: 1100px;
+            height: 600px;
+        }
+
     }
 
     &__modal-content{
