@@ -1,4 +1,4 @@
-<section class="footer">
+<footer class="footer">
     <div class="container footer__container">
         <div class="text__wrapper">
             <p class="footer__text">&copy; 2021 | All Rights Reserved |&nbsp;</p>
@@ -11,8 +11,14 @@
                     <use href="/src/images/heart.svg#heart"></use>
                 </svg>
                 <span>by</span>
-                <a href="#" class="footer__link">GoIT Students</a>
+                <a href="##" class="footer__link" data-action="open-modal" >GoIT Students</a>
             </p>       
         </div>
-    </div>
-</section>
+            <div class="footer__modal-overlay is-hidden-footer">
+                <div class="footer__modal-window">
+                    <div class="footer__modal-content">
+                        <span class="footer__modal-close" data-action="close-modal">&times;</span>    
+                    </div>
+                </div>
+            </div>   
+</footer>

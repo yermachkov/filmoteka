@@ -61,6 +61,18 @@ export default class FilmsApiService {
     this.page += 1;
   };
 
+  pageDecrement() {
+    this.page -= 1;
+}
+
+  getPage() {
+    return this.page;
+  };
+
+  setPage(newPage) {
+    this.page = newPage;
+  }
+  
   get query() {
       return this.searchQuery;
     };

@@ -14,18 +14,7 @@ export function cardMurkup(getImage) {
                 </div>
             </a>
         </div>`
-   
+
 
     console.log(murkup);
     return murkup;
-        
-}
-
-
-
-
-
-
-
-
-
