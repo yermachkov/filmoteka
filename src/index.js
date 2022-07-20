@@ -5,6 +5,8 @@ import onHeaderBtnClick from './js/current-header-button';
 import pagination from './js/pagination';
 import { createHomeCardsMarkup } from './js/createMarkup';
 import './js/footerModal';
+import './js/team-data';
+import './js/render-team-card';
 import './js/spinner';
 import './js/film-modal';
 import onHeaderBtnClick from './js/color-change-header-btn';
