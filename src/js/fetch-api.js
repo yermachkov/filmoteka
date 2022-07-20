@@ -33,7 +33,7 @@ export default class FilmsApiService {
     }
   };
 
-  async fetchGeneres() {
+  async fetchGenres() {
     try {
       const response = await axios.get(`/genre/movie/list?api_key=${API_KEY}`);
       return response.data;

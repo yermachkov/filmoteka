@@ -7,6 +7,7 @@ import { createHomeCardsMarkup } from './js/createMarkup';
 import './js/footerModal';
 import './js/spinner';
 import './js/film-modal';
+import './js/get-genres';
 import onHeaderBtnClick from './js/color-change-header-btn';
 
 const filmsApi = new FilmsApiService();
