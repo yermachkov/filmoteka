@@ -28,7 +28,7 @@ filmsApi.fetchTrendingFilms().then(response => {
 })
 
 function renderHomeGallery(markup) {
-    refs.gallery.insertAdjacentHTML('beforeend', createHomeCardsMarkup(markup));
+    refs.gallery.innerHTML = createHomeCardsMarkup(markup);
 }
 
 const ulTag = document.querySelector('ul');

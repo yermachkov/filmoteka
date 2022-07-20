@@ -14,7 +14,7 @@ export default class FilmsApiService {
 
   async fetchTrendingFilms() {
     try {
-      const response = await axios.get(`/trending/movie/day?api_key=${API_KEY}`);
+      const response = await axios.get(`/trending/movie/day?api_key=${API_KEY}&page=${this.page}`);
       return response.data;
       // returns an Object which contains { page, Array(20 items), total_pages, total_results}. 
     } catch (error) {
