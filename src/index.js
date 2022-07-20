@@ -19,7 +19,7 @@ const refs = {
     gallery: document.querySelector('.gallery__list'),
 }
 
-refs.searchForm.addEventListener('submit', onSearch);
+// refs.searchForm.addEventListener('submit', onSearch);
 // refs.headerButtons.addEventListener('click', onHeaderBtnClick);
 
 filmsApi.fetchTrendingFilms().then(response => {
