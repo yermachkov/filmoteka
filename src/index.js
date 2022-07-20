@@ -1,4 +1,7 @@
 import FilmsApiService from './js/fetch-api';
+import { cardMurkup } from './js/cardMurkup';
+import onHeaderBtnClick from './js/current-header-button';
+
 import pagination from './js/pagination';
 import { createHomeCardsMarkup } from './js/createMarkup';
 import './js/footerModal';
@@ -11,11 +14,11 @@ const refs = {
     searchForm: document.querySelector('.header-form'),
     searchButton: document.querySelector('.header-form__btn'),
     filmCard: document.querySelector('.gallery'),
-    gallery: document.querySelector('.gallery__list'),
     headerButtons: document.querySelector('.header__buttons'),
-};
+    gallery: document.querySelector('.gallery__list'),
+}
 
-// refs.searchForm.addEventListener('submit', onSearch);
+refs.searchForm.addEventListener('submit', onSearch);
 refs.headerButtons.addEventListener('click', onHeaderBtnClick);
 
 filmsApi.fetchTrendingFilms().then(response => {
