@@ -1,6 +1,6 @@
 import FilmsApiService from './js/fetch-api';
 import { cardMurkup } from './js/cardMurkup';
-import onHeaderBtnClick from './js/current-header-button';
+// import onHeaderBtnClick from './js/current-header-button';
 
 import pagination from './js/pagination';
 import { createHomeCardsMarkup } from './js/createMarkup';
@@ -19,8 +19,8 @@ const refs = {
     gallery: document.querySelector('.gallery__list'),
 }
 
-refs.searchForm.addEventListener('submit', onSearch);
-refs.headerButtons.addEventListener('click', onHeaderBtnClick);
+// refs.searchForm.addEventListener('submit', onSearch);
+// refs.headerButtons.addEventListener('click', onHeaderBtnClick);
 
 filmsApi.fetchTrendingFilms().then(response => {
     renderHomeGallery(response.results);
