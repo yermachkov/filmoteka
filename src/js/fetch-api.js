@@ -43,16 +43,16 @@ export default class FilmsApiService {
     };
     };
 
-  async fetchFilmById() {
+  async fetchFilmById(id) {
     try {
-      const response = await axios.get(`/movie/${this.movieId}?api_key=${API_KEY}`);
+      const response = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
       return response.data;
     }
     catch (error) {
       console.error(error);
     };
   };
-
+  
   resetPage() {
     this.page = 1;
   };

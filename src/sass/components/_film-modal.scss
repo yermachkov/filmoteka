@@ -1,0 +1,247 @@
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    padding: 48px 20px 40px 20px;
+
+    max-height: 95vh;
+    overflow-y: scroll;
+    
+    font-size: 12px;
+    font-weight: 500;
+    background-color: white;
+    
+    color: black;
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-50%, -50%) scale(1);
+
+    @include tabl {
+        display: flex;
+        justify-content: space-between;
+        width: 704px;
+        min-height: 552px;
+        max-height: 100vh;
+        overflow: auto;
+        padding: 40px 25px;
+        border-radius: 5px;
+        gap: 25px;
+    }
+  
+    @include desk {
+        min-width: 806px;
+        min-height: 558px;
+        padding: 40px 30px;
+        gap: 30px;
+        overflow: auto;
+    }
+  }
+  
+.modal__poster {
+    margin-bottom: 20px;
+    width: 100%;
+        
+    @include tabl {
+        margin: 0px;
+        width: 40%;
+    }
+
+    @include desk {
+        width: 40%;
+    }
+}
+  
+.modal__img {
+    display: block;
+    margin: 0px;
+    width: inherit;
+    border-radius: 5px;
+    object-fit: contain;
+    
+    @include tabl { 
+        width: 100%;
+    } 
+    
+    @include desk {   
+        width: 100%;
+    }  
+}
+  
+.modal__content {
+    margin: 0;
+
+    @include tabl {
+      width: 60%;
+    }
+
+    @include desk {
+      width: 60%;
+    }
+  
+  
+    &-title {
+        font-size: 20px;
+        line-height: 1.17;
+        font-weight: 500;
+        margin-bottom: 20px;
+        
+        text-transform: uppercase;
+    
+        @include tabl {
+            font-size: 30px;
+        }
+    }
+  
+    &-info {
+        margin-bottom: 12px;
+        line-height: 16px;
+    }
+  
+    &-name {
+        padding-bottom: 8px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0em;
+        text-align: left;
+        vertical-align: text-top;
+        width: 90px;
+        line-height: 16px;
+        color: #8C8C8C;
+        
+        @include tabl {
+            width: 108px;
+        }
+            
+        @include desk {
+            width: 152px;
+        }
+    }
+
+    &-name-value {
+        padding-bottom: 8px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        text-align: left;
+        vertical-align: text-top;
+  
+        &--title {
+            text-transform: uppercase;
+            vertical-align: text-top;
+      }
+    }
+}
+  
+.modal__content-rate {
+    background-color: var(--accent-color);
+    color: white;
+    line-height: 14.06px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    width: 36px;
+    height: 16px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+  
+.modal__content-rates {
+    color: black;
+    line-height: 14.06px;
+    display: inline-block;
+    text-align: center;
+}
+  
+.modal__about {
+    margin-bottom: 20px;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 20px;
+  
+    &-title {
+        line-height: 16px;
+        padding-bottom: 8px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+  
+    &-description {
+        text-align: justify;
+        font-weight: 500;
+    }
+}
+  
+.modal__btns {
+    display: flex;
+    justify-content: space-between;
+
+    @include tabl {
+        display: block;
+    }
+}
+
+.modal__btn {
+    height: 44px;
+    width: 110px;
+    padding: 6px 10px;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include tabl {
+        width: 125px;
+    }
+
+    @include desk {
+        width: 136px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        border-color: transparent;
+    }
+}
+
+.modal__btn:not(:last-child) {
+    @include tabl {
+        margin-right: 15px;
+    }
+}
+  
+.modal__close {
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    box-shadow:none;
+    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 12px var(--accent-color);
+    }
+}
+
+.modal__close-svg {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+}
