@@ -3,6 +3,7 @@ import pagination from './js/pagination';
 import { createHomeCardsMarkup } from './js/createMarkup';
 import './js/footerModal';
 import './js/spinner';
+import './js/film-modal';
 
 const filmsApi = new FilmsApiService();
 
