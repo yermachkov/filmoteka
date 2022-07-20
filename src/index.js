@@ -14,40 +14,95 @@ const refs = {
 };
 
 // refs.searchForm.addEventListener('submit', onSearch);
-
-filmsApi.fetchTrendingFilms().then(response => {
-    renderHomeGallery(response.results);
-})
+// filmsApi.fetchTrendingFilms().then(response => {
+//   renderHomeGallery(response.results);
+// });
 
 function renderHomeGallery(markup) {
-    refs.gallery.insertAdjacentHTML('beforeend', createHomeCardsMarkup(markup));
+  refs.gallery.insertAdjacentHTML('beforeend', createHomeCardsMarkup(markup));
 }
-
-const ulTag = document.querySelector('ul');
-// console.log(pagination);
 
 filmsApi.fetchTrendingFilms().then(r => {
   console.log(r);
   const page = r.page;
   const totalPages = r.total_pages;
-  //   console.log(page, totalPages);
+
+  renderHomeGallery(r.results);
   pagination(totalPages, page);
 });
 
-// refs.searchForm.addEventListener('submit', onSearch);
+const ulTag = document.querySelector('.pagination ul');
 
-// function onSearch(event) {
-//     event.preventDefault();
+ulTag.addEventListener('click', onClick);
+// console.log(pagination(totalPages, page));
+// pagination(20, 5);
 
-//     filmsApi.query = event.currentTarget.elements.userSearchQuery.value;
-//     if (filmsApi.query === '') {
-//         return alert('пустая строка');
-//     }
-//     filmsApi.fetchFilmsOnSearch().then(data => {
-//         console.log(data);
-//         refs.filmCard.insertAdjacentHTML('beforeend', cardMurkup(data.results));
-//     });
+function onClick(evt) {
+  refs.gallery.innerHTML = '';
+  console.log(evt.target);
 
-// }
+  if (evt.target === document.querySelector('.arrow-left')) {
+    filmsApi.pageDecrement();
+    filmsApi.fetchTrendingFilms().then(r => {
+      console.log(r);
+      const page = r.page;
+      const totalPages = r.total_pages;
 
+      console.log(evt.target);
+      renderHomeGallery(r.results);
+      pagination(totalPages, page);
+      console.log(Number(document.querySelector('.numb').textContent));
+    });
+  }
 
+  if (evt.target === document.querySelector('.numb')) {
+    filmsApi.Page(Number(document.querySelector('.numb').textContent));
+    filmsApi.fetchTrendingFilms().then(r => {
+      console.log(r);
+      const page = r.page;
+      const totalPages = r.total_pages;
+
+      console.log(evt.target);
+      renderHomeGallery(r.results);
+      pagination(totalPages, page);
+    });
+  }
+
+  if (evt.target === document.querySelector('.arrow-right')) {
+    filmsApi.pageIncrement();
+    filmsApi.fetchTrendingFilms().then(r => {
+      console.log(r);
+      const page = r.page;
+      const totalPages = r.total_pages;
+
+      renderHomeGallery(r.results);
+      pagination(totalPages, page);
+    });
+
+    // if (evt.target === document.querySelector('.arrow-left')) {
+    //   filmsApi.pageDecrement();
+    //   filmsApi.fetchTrendingFilms().then(r => {
+    //     console.log(r);
+    //     const page = r.page;
+    //     const totalPages = r.total_pages;
+
+    //     console.log(evt.target);
+    //     renderHomeGallery(r.results);
+    //     pagination(totalPages, page);
+    //   });
+    // }
+
+    // filmsApi.fetchTrendingFilms().then(r => {
+    //   console.log(r);
+    //   const page = r.page;
+    //   const totalPages = r.total_pages;
+
+    //   console.log(evt.target);
+    //   if (evt.target === document.querySelector('.arrow-right')) {
+    //     filmsApi.pageIncrement();
+    //     renderHomeGallery(r.results);
+    //     pagination(totalPages, page + 1);
+    //   }
+    // });
+  }
+}

@@ -11,7 +11,7 @@ export default function element(totalPages, page) {
   let beforePages = page - 2;
   let afterPages = page + 2;
   if (page > 1) {
-    liTag += `<li class="arrow-left" onclick="element(totalPages, ${page - 1})">
+    liTag += `<li class="arrow-left" >
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path
               d="M12.667 8H3.333M8 12.667 3.333 8 8 3.333"
@@ -20,13 +20,13 @@ export default function element(totalPages, page) {
               stroke-linejoin="round"
             />
           </svg>
-        </li>`;
+        </li>`; //onclick="pagination(totalPages, ${page - 1})"
   }
 
   if (page > 2 && page != 3) {
-    liTag += `<li class="numb" onclick="element(totalPages, 1)"><span>1</span></li>`;
+    liTag += `<li class="numb" >1</li>`; //onclick="pagination(totalPages, 1)"
     if (page > 4) {
-      liTag += `<li class="dots"><span>. . .</span></li>`;
+      liTag += `<li class="dots">. . .</li>`;
     }
   }
 
@@ -56,20 +56,18 @@ export default function element(totalPages, page) {
     } else {
       activeLi = '';
     }
-    liTag += `<li class="numb ${activeLi}" onclick="element(totalPages, ${pageLength})"><span>${pageLength}</span></li>`;
+    liTag += `<li class="numb ${activeLi}" >${pageLength}</li>`; //onclick="pagination(totalPages, ${pageLength})"
   }
 
   if (page < totalPages - 1 && page != totalPages - 2) {
     if (page < totalPages - 3) {
-      liTag += `<li class="dots"><span>. . .</span></li>`;
+      liTag += `<li class="dots">. . .</li>`;
     }
-    liTag += `<li class="numb" onclick="element(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
+    liTag += `<li class="numb" >${totalPages}</li>`; //onclick="pagination(totalPages, ${totalPages})"
   }
 
   if (page < totalPages) {
-    liTag += `<li class="arrow-right" onclick="element(totalPages, ${
-      page + 1
-    })">
+    liTag += `<li class="arrow-right" >
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path
               d="M3.333 8h9.334M8 12.667 12.667 8 8 3.333"
@@ -78,7 +76,7 @@ export default function element(totalPages, page) {
               stroke-linejoin="round"
             />
           </svg>
-        </li>`;
+        </li>`; //onclick="pagination(totalPages, ${page + 1})"
   }
   ulTag.innerHTML = liTag;
 }
