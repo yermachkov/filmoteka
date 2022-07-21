@@ -35,7 +35,7 @@ export default class FilmsApiService {
     }
   }
 
-  async fetchGeneres() {
+  async fetchGenres() {
     try {
       const response = await axios.get(
         `/genre/movie/list?api_key=${API_KEY}&page=${this.page}`
@@ -46,11 +46,9 @@ export default class FilmsApiService {
     }
   }
 
-  async fetchFilmById() {
+  async fetchFilmById(id) {
     try {
-      const response = await axios.get(
-        `/movie/${this.movieId}?api_key=${API_KEY}&page=${this.page}`
-      );
+      const response = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
       return response.data;
     } catch (error) {
       console.error(error);
