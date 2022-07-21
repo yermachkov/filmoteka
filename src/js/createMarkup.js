@@ -1,7 +1,7 @@
 import { save, load } from './local-storage-service';
 const LOCALSTORAGE_KEY = "genres";
 const genres = load(LOCALSTORAGE_KEY);
-console.log(genres);
+// console.log(genres);
 
 export function createHomeCardsMarkup(movies) {
     return movies.map(({ genre_ids, id, title, poster_path, release_date, vote_average }) => {
