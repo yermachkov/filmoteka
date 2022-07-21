@@ -24,7 +24,7 @@ export default function element(totalPages, page) {
   }
 
   if (page > 2 && page != 3) {
-    liTag += `<li class="numb" >1</li>`; //onclick="pagination(totalPages, 1)"
+    liTag += `<li class="numb">1</li>`; //onclick="pagination(totalPages, 1)"
     if (page > 4) {
       liTag += `<li class="dots">. . .</li>`;
     }
