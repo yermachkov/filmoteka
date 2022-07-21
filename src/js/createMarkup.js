@@ -24,7 +24,7 @@ export function createHomeCardsMarkup(movies) {
                 <img class="gallery__image" src="${imgUrl}" alt="Movie poster of ${title}" loading="lazy" data-id="${id}"/>
                 <div class="info">
                     <h2 class="info-title">${title}</h2>
-										<p class="info-item">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(2)}</span></p>
+										<p class="info-meta">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(2)}</span></p>
                 </div>
         </li>`
     }).join('');
