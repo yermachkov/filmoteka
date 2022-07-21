@@ -1,7 +1,4 @@
 .gallery__list {
-margin-left: auto;
-margin-right: auto;
-
   @include tabl {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +11,12 @@ margin-right: auto;
 }
 
 .gallery__item {
+  @media screen and (max-width: 768px) {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
   &:not(:last-child) {
       @media screen and (max-width: 768px) {
         margin-bottom: 20px;
@@ -30,9 +33,7 @@ margin-right: auto;
 
 .gallery__item:hover,
 .gallery__item:focus {
-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+box-shadow: 0px 0px 14px 5px #FF6B01, 2px 0px 14px 5px #8B0B06, 0px 0px 2px 5px rgba(139, 11, 6, 0.3);
 }
 
 .gallery__image {
@@ -49,7 +50,6 @@ box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
   @include desk {
   height: 574px;
   }
-
 }
 
 .info-title {
@@ -57,4 +57,18 @@ box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
   line-height: calc(24 / 20);
   text-transform: uppercase;
   color: #000000;
+}
+
+.info-meta {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+
+  color: #FF6B08;
+}
+
+.info-rate {
+  color: #FFFFFF;
+  background-color: #FF6B08;
+  border-radius: 5px;
 }
