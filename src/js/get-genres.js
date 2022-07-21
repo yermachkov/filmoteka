@@ -8,5 +8,3 @@ filmsApi.fetchGenres().then(response => {
     save(LOCALSTORAGE_KEY, response);    
 }
 );
-
-console.log(load(LOCALSTORAGE_KEY));
