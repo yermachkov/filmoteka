@@ -40,10 +40,10 @@ export function filmModalMarkup({poster_path, title, vote_average, vote_count, p
             </div>
         
             <div class="modal__btns">
-                <button class="modal__btn add-to-watched" type="button" data-modal-action="${id}">
+                <button class="modal__btn add-to-watched is-in-storage" type="button" data-modal-action="${id}">
                 Add to watched
                 </button>
-                <button class="modal__btn add-to-queue" type="button" data-modal-action="${id}">
+                <button class="modal__btn add-to-queue is-in-storage" type="button" data-modal-action="${id}">
                 Add to queue
                 </button>
                 <!-- <button  type="button" class="modal__btn player" data-player-action="${id}">watch the trailer</button>  -->
