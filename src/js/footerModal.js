@@ -1,8 +1,7 @@
 const refs = {
     openFooterModal: document.querySelector('[data-action="open-modal"]'),
     closeFooterModal: document.querySelector('[data-action="close-modal"]'),
-    // footerModal: document.querySelector('.footer__modal'),
-    footerModalOverlay: document.querySelector('.footer__modal-overlay')
+    footerModalOverlay: document.querySelector('.footer__modal-overlay'),
 };
 
 refs.openFooterModal.addEventListener('click', onOpenModal);

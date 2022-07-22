@@ -1,7 +1,4 @@
 .gallery__list {
-margin-left: auto;
-margin-right: auto;
-
   @include tabl {
     display: flex;
     flex-wrap: wrap;
@@ -9,11 +6,18 @@ margin-right: auto;
   }
   
   @include desk {
-    gap: 16px;
+   column-gap: 16px;
+   row-gap: 32px;
   }
 }
 
 .gallery__item {
+  @media screen and (max-width: 768px) {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
   &:not(:last-child) {
       @media screen and (max-width: 768px) {
         margin-bottom: 20px;
@@ -30,9 +34,7 @@ margin-right: auto;
 
 .gallery__item:hover,
 .gallery__item:focus {
-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+box-shadow: 0px 0px 14px 5px #d90e0bdf, 2px 0px 14px 5px #57070372, 0px 0px 2px 5px rgba(139, 11, 6, 0.3);
 }
 
 .gallery__image {
@@ -49,12 +51,37 @@ box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
   @include desk {
   height: 574px;
   }
+}
 
+.info {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  @include desk {
+      font-size: 20px;
+      line-height: calc(24 / 20);
+    }
 }
 
 .info-title {
-  font-size: 20px;
-  line-height: calc(24 / 20);
   text-transform: uppercase;
   color: #000000;
+  font-size: 20px;
+  }
+
+.info-meta {
+  color: #FF6B08;
+}
+
+.info-rate {
+  font-size: 12px;
+  line-height: 1.17;
+
+  color: #FFFFFF;
+  background-color: #FF6B08;
+  border-radius: 5px;
+
+  padding: 1px 6px;
+  margin-left: 8px;
 }

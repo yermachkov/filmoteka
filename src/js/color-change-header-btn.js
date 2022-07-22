@@ -1,4 +1,10 @@
-export default function onHeaderBtnClick(e){
+const refs = {
+    headerButtons: document.querySelector('.header__buttons'),
+}
+
+refs.headerButtons.addEventListener('click', onHeaderBtnClick);
+
+function onHeaderBtnClick(e){
     if(e.target.nodeName !== 'BUTTON'){
         return
     }
