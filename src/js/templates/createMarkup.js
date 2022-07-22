@@ -21,14 +21,11 @@ export function createGalleryMarkup(movies) {
 			// let res = genres.map(genre => return genre_ids.includes(genres.name));
         return `
         <li class="gallery__item">
-            <a href="" class="gallery__link" >
                 <img class="gallery__image" src="${imgUrl}" alt="Movie poster of ${title}" loading="lazy" data-id="${id}"/>
                 <div class="info">
                     <h2 class="info-title">${title}</h2>
-										<div class="meta-wrap"></div>
-                    <p class="info-item">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="content-rates">${vote_average.toFixed(2)}</span></p>
+										<p class="info-meta">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(2)}</span></p>
                 </div>
-            </a>
         </li>`
     }).join('');
 };
