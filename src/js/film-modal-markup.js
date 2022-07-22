@@ -40,14 +40,15 @@ export function filmModalMarkup({poster_path, title, vote_average, vote_count, p
             </div>
         
             <div class="modal__btns">
-                <button class="modal__btn add-to-watched" type="button" data-modalaction="${id}">
-                Add to watched
-                </button>
-                <button class="modal__btn add-to-queue" type="button" data-modalaction="${id}">
-                Add to queue
-                </button>
-                <!-- <button  type="button" class="modal__btn player" data-player-action="${id}">watch the trailer</button>  -->
-
+                <div class="modal__btns-wrapper">
+                    <button class="modal__btn add-to-watched" type="button" data-modalaction="${id}">
+                    Add to watched
+                    </button>
+                    <button class="modal__btn add-to-queue" type="button" data-modalaction="${id}">
+                    Add to queue
+                    </button>
+                </div>
+                <button  type="button" class="modal__btn player" data-player-action="${id}">watch the trailer</button>
             </div>
             <button class="modal__close" type="button" data-modal-close aria-label="close-modal">
                 <svg class="modal__close-svg" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

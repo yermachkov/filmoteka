@@ -59,9 +59,9 @@ const getFilmModal = async (filmID) => {
         refs.addToWatched = document.querySelector(".add-to-watched");
         refs.addToQueue = document.querySelector(".add-to-queue");
         
-        onWatchedButtonTextWhenOpenModal(filmID);
-        onQueueButtonTextWhenOpenModal(filmID);
-        determineButtonStateWhenOpenModal();
+        await onWatchedButtonTextWhenOpenModal(filmID);
+        await onQueueButtonTextWhenOpenModal(filmID);
+        await determineButtonStateWhenOpenModal();
         
         refs.closeFilmModalBtn.addEventListener('click', onCloseFilmModal);
         refs.backdrop.addEventListener('click', onBackdropClose);
@@ -123,20 +123,20 @@ function onAddToWatchedClick(e) {
         console.log("привет");
     }
     if (!inStorageWatched(id)) {
-        // змінюємо назву та стан активності кнопок після кліку
-        refs.addToWatched.textContent = REMOVE_FROM_WATCHED;
-        refs.addToWatched.classList.add('is-in-storage');
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
         addToStorage("watchedFilms", id);
-        console.log("я здесь");  
-    } else {
+        console.log("я здесь");
         // змінюємо назву та стан активності кнопок після кліку
-        refs.addToWatched.textContent = ADD_TO_WATCHED;
-        refs.addToWatched.classList.remove('is-in-storage');
+        refs.addToWatched.textContent = REMOVE_FROM_WATCHED;
+        refs.addToWatched.classList.add('is-in-storage');
+    } else {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
         removeFromStorage("watchedFilms", id);
+        // змінюємо назву та стан активності кнопок після кліку
+        refs.addToWatched.textContent = ADD_TO_WATCHED;
+        refs.addToWatched.classList.remove('is-in-storage');
     }
 }
 
@@ -147,19 +147,22 @@ function onAddToQueueClick(e) {
         addToStorageWhenNull("queueFilms", id);
     }
     if (!inStorageQueue(id)) {
-        // змінюємо назву та стан активності кнопок після кліку
-        refs.addToWatched.textContent = REMOVE_FROM_QUEUE;
-        refs.addToWatched.classList.add('is-in-storage');
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
         addToStorage("queueFilms", id);
-    } else {
+        console.log("queue я тут ");
         // змінюємо назву та стан активності кнопок після кліку
-        refs.addToWatched.textContent = ADD_TO_QUEUE;
-        refs.addToWatched.classList.remove('is-in-storage');
+        refs.addToQueue.textContent = REMOVE_FROM_QUEUE;
+        refs.addToQueue.classList.add('is-in-storage');
+
+    } else {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
         removeFromStorage("queueFilms", id);
+        console.log("queue я здесь");
+        // змінюємо назву та стан активності кнопок після кліку
+        refs.addToQueue.textContent = ADD_TO_QUEUE;
+        refs.addToQueue.classList.remove('is-in-storage');
     }
 }
 

@@ -174,10 +174,23 @@
   
 .modal__btns {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
 
     @include tabl {
         display: block;
+    }
+}
+
+.modal__btns-wrapper {
+    display: flex;
+    justify-content: space-between;
+    
+    @include tabl {
+        // display: block;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 }
 
@@ -197,6 +210,7 @@
 
     @include tabl {
         width: 125px;
+        margin-bottom: 15px;
     }
 
     @include desk {
