@@ -4,10 +4,10 @@ import { filmModalMarkup } from "./film-modal-markup";
 const filmsApiService = new FilmsApiService();
 let id = null;
 let markup = "";
-const ADD_TO_WATCHED = 'Add to watched';
-const ADD_TO_QUEUE = 'Add to queue';
-const REMOVE_FROM_WATCHED = 'Remove from watched';
-const REMOVE_FROM_QUEUE = 'Remove from queue';
+// const ADD_TO_WATCHED = 'Add to watched';
+// const ADD_TO_QUEUE = 'Add to queue';
+// const REMOVE_FROM_WATCHED = 'Remove from watched';
+// const REMOVE_FROM_QUEUE = 'Remove from queue';
 
 let refs = {
     gallery: document.querySelector(".gallery"),
