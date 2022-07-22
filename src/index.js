@@ -7,6 +7,8 @@ import './js/team-data';
 import './js/render-team-card';
 import './js/spinner';
 import './js/film-modal';
+import './js/get-genres';
+
 
 const filmsApi = new FilmsApiService();
 
