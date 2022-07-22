@@ -2,13 +2,14 @@ import FilmsApiService from "./fetch-api";
 import { filmModalMarkup } from "./film-modal-markup";
 import {
     addToStorage,
+    addToStorageWhenNull,
     removeFromStorage,
 } from './storage';
 import { inStorageWatched } from "./storage";
 import { inStorageQueue } from "./storage";
 
 const filmsApiService = new FilmsApiService();
-let id = null;
+let id;
 let markup = "";
 const ADD_TO_WATCHED = 'Add to watched';
 const ADD_TO_QUEUE = 'Add to queue';
@@ -24,6 +25,9 @@ let refs = {
 }
 
 localStorage.clear();
+
+localStorage.setItem("watchedFilms", JSON.stringify([]));
+localStorage.setItem("queueFilms", JSON.stringify([]));
 
 refs.gallery.addEventListener('click', onOpenFilmModal);
 
@@ -115,7 +119,8 @@ function onAddToWatchedClick(e) {
     console.log(id);
     console.log("Ви натиснули на кнопку WATCHED, ID цієї картки - ", id);
     if (localStorage.getItem("watchedFilms") == null) {
-        addToStorage("watchedFilms", id);
+        addToStorageWhenNull("watchedFilms", id);
+        console.log("привет");
     }
     if (!inStorageWatched(id)) {
         // змінюємо назву та стан активності кнопок після кліку
@@ -123,7 +128,8 @@ function onAddToWatchedClick(e) {
         refs.addToWatched.classList.add('is-in-storage');
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
-        addToStorage("watchedFilms", id);   
+        addToStorage("watchedFilms", id);
+        console.log("я здесь");  
     } else {
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToWatched.textContent = ADD_TO_WATCHED;
@@ -138,7 +144,7 @@ function onAddToQueueClick(e) {
     e.preventDefault();
     console.log("Ви натиснули на кнопку QUEUE, ID цієї картки - ", id);
     if (localStorage.getItem("queueFilms") == null) {
-        addToStorage("queueFilms", id);
+        addToStorageWhenNull("queueFilms", id);
     }
     if (!inStorageQueue(id)) {
         // змінюємо назву та стан активності кнопок після кліку

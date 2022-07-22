@@ -20,13 +20,21 @@ export function inStorageQueue(id) {
         else return false;
 }
 
-const addToStorage = (key, value) => {
-    let currArray = [];
-  
-    if (localStorage.getItem(key) !== null) {
-      currArray = [...JSON.parse(localStorage.getItem(key))];
+const addToStorageWhenNull = (key, value) => {
+    let currArray = [value];
+    try {
+        const stringOfData = JSON.stringify(currArray);
+        localStorage.setItem(key, stringOfData);
+    }   catch (error) {
+        console.error('You have an (ADD TO LOCAL STORAGE) error when add your first film: ', error.message);
     }
+}
+
+const addToStorage = (key, value) => {
+    let currArray = [...JSON.parse(localStorage.getItem(key))];
+    console.log(currArray);
     currArray.push(value);
+    console.log(currArray);
     
     try {
       const stringOfData = JSON.stringify(currArray);
@@ -37,11 +45,11 @@ const addToStorage = (key, value) => {
 };
 
 const removeFromStorage = (key, id) => {
-    let currArray = [];
+    let currArray = [...JSON.parse(localStorage.getItem(key))];
   
-    if (localStorage.getItem(key) !== null) {
-      currArray = [...JSON.parse(localStorage.getItem(key))];
-    }
+    // if (localStorage.getItem(key) !== null) {
+    //   currArray = [...JSON.parse(localStorage.getItem(key))];
+    // }
     
     const item = currArray.indexOf(id);
     currArray.splice(item, 1);
@@ -56,5 +64,6 @@ const removeFromStorage = (key, id) => {
 
 export {
     addToStorage,
+    addToStorageWhenNull,
     removeFromStorage,
 };
