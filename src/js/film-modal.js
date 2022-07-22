@@ -22,17 +22,14 @@ let refs = {
 
 refs.gallery.addEventListener('click', onOpenFilmModal);
 
-
 function onOpenFilmModal(e) {
     e.preventDefault();
+    refs.gallery.removeEventListener('click', onOpenFilmModal);
     id = e.target.dataset.id;
-    // getFilmModal(id);
-        
+            
     if (e.target.nodeName !== 'IMG') {
       return;
     }
-
-     
     toggleModal();
     getFilmModal(id);
 }
@@ -47,7 +44,7 @@ const getFilmModal = async (filmID) => {
         // console.log(filmData);
         markup = filmModalMarkup(filmData);
         refs.backdrop.innerHTML = markup;
-        // getRefsOfBtns();
+        
         refs.closeFilmModalBtn = document.querySelector(".modal__close");
         refs.addToWatched = document.querySelector(".add-to-watched");
         refs.addToQueue = document.querySelector(".add-to-queue");
@@ -71,16 +68,9 @@ const getFilmModal = async (filmID) => {
     }
 }
 
-// function getRefsOfBtns() {
-//     refs.closeFilmModalBtn = document.querySelector(".modal__close");
-//     refs.addToWatched = document.querySelector(".add-to-watched");
-//     refs.addToQueue = document.querySelector(".add-to-queue");
-    
-//     return refs;
-// }
-
 function onCloseFilmModal(e) {
     e.preventDefault();
+    refs.gallery.addEventListener('click', onOpenFilmModal);
     toggleModal();
     refs.backdrop.innerHTML = "";
     removeAllEventListeners();
@@ -89,6 +79,7 @@ function onCloseFilmModal(e) {
 function onEscapeClose(e) {
     e.preventDefault();
     if (e.code === 'Escape') {
+        refs.gallery.addEventListener('click', onOpenFilmModal);
         toggleModal();
         refs.backdrop.innerHTML = "";
         removeAllEventListeners();
@@ -98,6 +89,7 @@ function onEscapeClose(e) {
 function onBackdropClose(e) {
     e.preventDefault();
     if (e.currentTarget === e.target) {
+        refs.gallery.addEventListener('click', onOpenFilmModal);
         toggleModal();
         refs.backdrop.innerHTML = "";
         removeAllEventListeners();
@@ -113,8 +105,6 @@ function removeAllEventListeners() {
     window.removeEventListener('keydown', onEscapeClose);
     refs.backdrop.removeEventListener('click', onBackdropClose);
 }
-
-
 
 function inStorageWatched(id) {
 
