@@ -203,8 +203,7 @@
         width: 136px;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: var(--accent-color);
         border-color: transparent;
     }
@@ -244,4 +243,9 @@
     right: 5%;
     width: 30px;
     height: 30px;
+}
+
+.is-in-storage {
+    background-color: var(--accent-color);
+    border-color: transparent;
 }
