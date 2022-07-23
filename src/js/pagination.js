@@ -26,7 +26,7 @@ export default function element(totalPages, page) {
   if (page > 2 && page != 3) {
     liTag += `<li class="numb">1</li>`; //onclick="pagination(totalPages, 1)"
     if (page > 4) {
-      liTag += `<li class="dots">. . .</li>`;
+      liTag += `<li class="dots">...</li>`;
     }
   }
 
@@ -61,7 +61,7 @@ export default function element(totalPages, page) {
 
   if (page < totalPages - 1 && page != totalPages - 2) {
     if (page < totalPages - 3) {
-      liTag += `<li class="dots">. . .</li>`;
+      liTag += `<li class="dots">...</li>`;
     }
     liTag += `<li class="numb" >${totalPages}</li>`; //onclick="pagination(totalPages, ${totalPages})"
   }

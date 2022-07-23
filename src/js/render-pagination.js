@@ -1,10 +1,8 @@
 import { refs } from './refs';
 import pagination from './pagination';
-import './paginationBtnWorks';
+// import './paginationBtnWorks';
 import FilmsApiService from './fetch-api';
 import { renderGallery } from './templates/render-gallery';
-
-
 
 const filmsApi = new FilmsApiService();
 
@@ -22,43 +20,56 @@ const ulTag = document.querySelector('.pagination ul');
 ulTag.addEventListener('click', onClick);
 
 function onClick(evt) {
-  refs.gallery.innerHTML = '';
-  console.log(evt.target);
+  if (evt.target.nodeName !== 'LI') {
+    return;
+  }
 
-  if (evt.target === document.querySelector('.arrow-left')) {
+  refs.gallery.innerHTML = '';
+  const allNumbes = document.querySelectorAll('.numb');
+  const arrowRight = document.querySelector('.arrow-right');
+  const arrowLeft = document.querySelector('.arrow-left');
+  const svgRight = document.querySelector('.arrow-right svg');
+  const svgPathRight = document.querySelector('.arrow-right svg path');
+  const svgLeft = document.querySelector('.arrow-left svg');
+  const svgPathLeft = document.querySelector('.arrow-left svg path');
+
+  if (
+    evt.target === arrowLeft ||
+    evt.target === svgLeft ||
+    evt.target === svgPathLeft
+  ) {
     filmsApi.pageDecrement();
     filmsApi.fetchTrendingFilms().then(r => {
-      console.log(r);
       const page = r.page;
       const totalPages = r.total_pages;
 
-      console.log(evt.target);
       renderGallery(r.results);
       pagination(totalPages, page);
       console.log(Number(document.querySelector('.numb').textContent));
     });
   }
 
-  const allNumbes = document.querySelectorAll('.numb');
+  // const allNumbes = document.querySelectorAll('.numb');
   for (const number of allNumbes) {
     if (evt.target === number) {
       filmsApi.setPage(Number(evt.target.textContent));
       filmsApi.fetchTrendingFilms().then(r => {
-        console.log(r);
         const page = r.page;
         const totalPages = r.total_pages;
 
-        console.log(evt.target);
         renderGallery(r.results);
         pagination(totalPages, page);
       });
     }
   }
 
-  if (evt.target === document.querySelector('.arrow-right')) {
+  if (
+    evt.target === arrowRight ||
+    evt.target === svgRight ||
+    evt.target === svgPathRight
+  ) {
     filmsApi.pageIncrement();
     filmsApi.fetchTrendingFilms().then(r => {
-      console.log(r);
       const page = r.page;
       const totalPages = r.total_pages;
 
@@ -66,4 +77,4 @@ function onClick(evt) {
       pagination(totalPages, page);
     });
   }
-};
+}

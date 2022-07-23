@@ -1,6 +1,7 @@
 svg {
   width: 16px;
   height: 16px;
+  pointer-events: none;
 }
 
 .pagination {
@@ -24,8 +25,24 @@ svg {
   align-items: center;
   width: 40px;
   height: 40px;
+  // margin-left: 16x;
+  // margin-right: 16px;
   border-radius: 5px;
   transition: background-color 0.3s ease, outline 0.3s ease;
+}
+
+.pagination ul li.dots {
+  width: fit-content;
+}
+
+.pagination ul li:nth-last-child(2),
+.pagination ul li:nth-child(2),
+.pagination ul .dots {
+  display: none;
+
+  @include tabl {
+    display: flex;
+  }
 }
 
 .pagination ul li.numb:hover,
@@ -33,6 +50,7 @@ svg {
 .pagination ul li.arrow-right:hover {
   background-color: #ff6b08;
   color: #ffffff;
+  width: 40px;
   outline: 1px solid rgba(43, 40, 40, 0.479);
 }
 
@@ -47,13 +65,16 @@ svg {
 .arrow-left,
 .arrow-right {
   background-color: #f7f7f7;
+  width: 40px;
 }
 
 .active-btn {
   background-color: #ff6b08;
   color: #ffffff;
+  width: 40px;
 }
 
 .dots {
   pointer-events: none;
+  transform: translateY(-10%);
 }
