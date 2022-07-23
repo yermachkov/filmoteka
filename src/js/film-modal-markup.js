@@ -1,10 +1,13 @@
 export function filmModalMarkup({poster_path, title, vote_average, vote_count, popularity, original_title, listOfGenders, overview, id}) {
+    const imgUrl = poster_path
+        ? `https://image.tmdb.org/t/p/w500${poster_path}`
+        : 'https://via.placeholder.com/270x400/5C5A5B/ffffff.png?text=NO+POSTER';
     return `
     <div class="modal" data-modal-id="${id}">
         <div class="modal__poster">
             <img
                 class="modal__img"
-                src="https://image.tmdb.org/t/p/w500${poster_path}"
+                src="${imgUrl}"
                 alt="${title}"
                 />
         </div>
