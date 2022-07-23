@@ -1,7 +1,18 @@
 export function filmModalMarkup({poster_path, title, vote_average, vote_count, popularity, original_title, listOfGenders, overview, id}) {
+    
     const imgUrl = poster_path
         ? `https://image.tmdb.org/t/p/w500${poster_path}`
         : 'https://via.placeholder.com/270x400/5C5A5B/ffffff.png?text=NO+POSTER';
+    const description = overview
+        ? overview
+        : 'Unfortunately we have no discription about this film';
+    const originalTitle = original_title
+        ? original_title
+        : 'No Title';
+    const genres = listOfGenders
+        ? listOfGenders
+        : 'Genres did not marked';
+
     return `
     <div class="modal" data-modal-id="${id}">
         <div class="modal__poster">
@@ -29,17 +40,17 @@ export function filmModalMarkup({poster_path, title, vote_average, vote_count, p
                 </tr>
                 <tr>
                     <td class="modal__content-name">Original Title</td>
-                    <td class="modal__content-name-value--title">${original_title}</td>
+                    <td class="modal__content-name-value--title">${originalTitle}</td>
                 </tr>
                 <tr>
                     <td class="modal__content-name">Genre</td>
-                    <td class="modal__content-name-value">${listOfGenders}</td>
+                    <td class="modal__content-name-value">${genres}</td>
                 </tr>
             </table>
         
             <div class="modal__about">
                 <h3 class="modal__about-title">About</h3>
-                <p class="modal__about-description">${overview}</p>
+                <p class="modal__about-description">${description}</p>
             </div>
         
             <div class="modal__btns">

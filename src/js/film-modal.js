@@ -24,7 +24,7 @@ let refs = {
     addToQueue: "",
 }
 
-localStorage.clear();
+// localStorage.clear();
 
 localStorage.setItem("watchedFilms", JSON.stringify([]));
 localStorage.setItem("queueFilms", JSON.stringify([]));
