@@ -62,8 +62,18 @@ const removeFromStorage = (key, id) => {
     }
 };
 
+const checkItemInStorage = (key1, key2, value) => {
+    if (!localStorage.getItem(key1)) {
+        localStorage.setItem(key1, JSON.stringify(value));
+    }
+    if (!localStorage.getItem(key2)) {
+        localStorage.setItem(key2, JSON.stringify(value));
+    }
+};
+
 export {
     addToStorage,
     addToStorageWhenNull,
     removeFromStorage,
+    checkItemInStorage,
 };
