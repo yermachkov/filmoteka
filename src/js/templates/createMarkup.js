@@ -8,7 +8,7 @@ export function createGalleryMarkup(movies) {
         
         const imgUrl = poster_path
         ? `https://image.tmdb.org/t/p/w500${poster_path}`
-        : 'https://via.placeholder.com/150/360505/FFFFFF/?Text=No-poster';
+        : 'https://via.placeholder.com/270x400/5C5A5B/FFFFFF/?Text=No+poster';
       
 			let movieGenre = "";
 			
@@ -24,7 +24,7 @@ export function createGalleryMarkup(movies) {
                 <img class="gallery__image" src="${imgUrl}" alt="Movie poster of ${title}" loading="lazy" data-id="${id}"/>
                 <div class="info">
                     <h2 class="info-title">${title}</h2>
-										<p class="info-meta">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(2)}</span></p>
+										<p class="info-meta">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(1)}</span></p>
                 </div>
         </li>`
     }).join('');
