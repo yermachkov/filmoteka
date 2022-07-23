@@ -8,23 +8,29 @@ export function createGalleryMarkup(movies) {
         
         const imgUrl = poster_path
         ? `https://image.tmdb.org/t/p/w500${poster_path}`
-        : 'https://via.placeholder.com/270x400/5C5A5B/FFFFFF/?Text=No+poster';
+        : 'https://via.placeholder.com/500x500/5C5A5B/FFFFFF/?Text=NO+POSTER';
       
-			let movieGenre = "";
-			
-			// for (const genre of genres) {
-			// 	if (genre_ids.includes(genre.id)) {
-			// 		movieGenre = g.name;
-			// 	}
-			// }
-
-			// let res = genres.map(genre => return genre_ids.includes(genres.name));
+      let movieGenres = "";
+        
+        if (genre_ids.length > 3) {
+          movieGenres = genres
+            .filter(({ id }) => genre_ids.includes(id))
+            .map(({ name }) => name)
+            .slice(0, 2)
+            .join(', ') + ", Other";
+        } else {
+          movieGenres = genres
+            .filter(({ id }) => genre_ids.includes(id))
+            .map(({ name }) => name)
+            .join(', ');
+        }
+      
         return `
         <li class="gallery__item">
                 <img class="gallery__image" src="${imgUrl}" alt="Movie poster of ${title}" loading="lazy" data-id="${id}"/>
                 <div class="info">
                     <h2 class="info-title">${title}</h2>
-										<p class="info-meta">${genre_ids.slice(0, 2)} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(1)}</span></p>
+										<p class="info-meta">${movieGenres} | ${release_date.slice(0, 4)}<span class="info-rate">${vote_average.toFixed(1)}</span></p>
                 </div>
         </li>`
     }).join('');

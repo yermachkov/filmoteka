@@ -5,6 +5,6 @@ const LOCALSTORAGE_KEY = "genres";
 const filmsApi = new FilmsApiService();
 
 filmsApi.fetchGenres().then(response => {
-    save(LOCALSTORAGE_KEY, response);    
+    save(LOCALSTORAGE_KEY, response.genres);    
 }
 );
