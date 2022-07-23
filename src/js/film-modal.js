@@ -55,7 +55,7 @@ const getFilmModal = async (filmID) => {
         markup = filmModalMarkup(filmData);
         refs.backdrop.innerHTML = markup;
         
-        refs.closeFilmModalBtn = document.querySelector(".modal__close");
+        refs.closeFilmModalBtn = document.querySelector("[data-modal-close]");
         refs.addToWatched = document.querySelector(".add-to-watched");
         refs.addToQueue = document.querySelector(".add-to-queue");
         
