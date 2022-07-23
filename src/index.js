@@ -6,5 +6,4 @@ import './js/render-team-card';
 import './js/spinner';
 import './js/film-modal';
 import './js/get-genres';
-import './js/paginationBtnWorks';
 import './js/render-pagination';
