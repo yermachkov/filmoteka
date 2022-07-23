@@ -35,3 +35,17 @@ a:focus,
 a:active {
   text-decoration: none;
 }
+
+
+
+input {
+  background-color: transparent;
+  border: 0px solid;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    box-shadow: 0;
+  }
+}
