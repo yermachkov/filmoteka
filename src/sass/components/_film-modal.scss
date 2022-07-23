@@ -174,10 +174,23 @@
   
 .modal__btns {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
 
     @include tabl {
         display: block;
+    }
+}
+
+.modal__btns-wrapper {
+    display: flex;
+    justify-content: space-between;
+    
+    @include tabl {
+        // display: block;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 }
 
@@ -197,14 +210,14 @@
 
     @include tabl {
         width: 125px;
+        margin-bottom: 15px;
     }
 
     @include desk {
         width: 136px;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: var(--accent-color);
         border-color: transparent;
     }
@@ -244,4 +257,9 @@
     right: 5%;
     width: 30px;
     height: 30px;
+}
+
+.is-in-storage {
+    background-color: var(--accent-color);
+    border-color: transparent;
 }
