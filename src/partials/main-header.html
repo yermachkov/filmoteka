@@ -23,8 +23,7 @@
         </li>
       </ul>
     </nav>
-    <form class="header-form">
-      <div class="header-form__field">
+      <form class="header-form">
         <label
           for="user-search-query"
           class="footer-form__title footer-title"
@@ -36,15 +35,15 @@
           class="header-form__input"
           placeholder="Movie search"
         />
+        <button type="submit" class="header-form__btn">
+          <svg class="header-form__icon" width="12" height="12">
+            <use href="/src/images/icon.svg#icon-search-2"></use>
+          </svg>
+        </button>
       </div>
-      <button type="submit" class="header-form__btn">
-        <svg class="header-form__icon" width="12" height="12">
-          <use href="/src/images/icon.svg#icon-search-2"></use>
-        </svg>
-      </button>
-      <p class="header-form__error-text is-hidden">
-        Search result not successful. Enter the correct movie name
-      </p>
     </form>
+    <p class="header-form__error-text is-hidden">
+        Search result not successful. Enter the correct movie name.
+    </p>
   </div>
 </header>

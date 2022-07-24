@@ -107,11 +107,15 @@ header {
 }
 
 .header-form {
-  position: relative;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .header-form__input {
+  font-size: 14px;
+  line-height: 1.14;
+
   width: 100%;
   height: 20px;
   margin-bottom: 16px;
@@ -143,19 +147,19 @@ header {
   border: none;
 }
 
-.header-form__icon{
-  position: absolute;
-  top: 2px;
-  right: 0;
+// .header-form__icon{
+//   position: absolute;
+//   top: 2px;
+//   right: 0;
 
-  @include tabl {
-    right: 188px;
-  }
+//   @include tabl {
+//     right: 188px;
+//   }
 
-  @include desk {
-    right: 414px;
-  }
-}
+//   @include desk {
+//     right: 414px;
+//   }
+// }
 
 .header-form__error-text {
   margin-top: 16px;

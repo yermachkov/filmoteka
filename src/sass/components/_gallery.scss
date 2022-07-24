@@ -12,6 +12,8 @@
 }
 
 .gallery__item {
+transition: transform 300ms;
+
   @media screen and (max-width: 768px) {
     max-width: 280px;
     margin-left: auto;
@@ -35,6 +37,7 @@
 .gallery__item:hover,
 .gallery__item:focus {
 box-shadow: 0px 0px 14px 5px #d90e0bdf, 2px 0px 14px 5px #57070372, 0px 0px 2px 5px rgba(139, 11, 6, 0.3);
+transform: scale(1.02);
 }
 
 .gallery__image {
