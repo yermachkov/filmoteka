@@ -4,6 +4,7 @@ import {
     addToStorage,
     addToStorageWhenNull,
     removeFromStorage,
+    checkItemInStorage,
 } from './storage';
 import { inStorageWatched } from "./storage";
 import { inStorageQueue } from "./storage";
@@ -24,11 +25,7 @@ let refs = {
     addToQueue: "",
 }
 
-// localStorage.clear();
-
-localStorage.setItem("watchedFilms", JSON.stringify([]));
-localStorage.setItem("queueFilms", JSON.stringify([]));
-
+checkItemInStorage("watchedFilms", "queueFilms", []);
 refs.gallery.addEventListener('click', onOpenFilmModal);
 
 async function onOpenFilmModal(e) {
@@ -120,13 +117,11 @@ function onAddToWatchedClick(e) {
     console.log("Ви натиснули на кнопку WATCHED, ID цієї картки - ", id);
     if (localStorage.getItem("watchedFilms") == null) {
         addToStorageWhenNull("watchedFilms", id);
-        console.log("привет");
     }
     if (!inStorageWatched(id)) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
         addToStorage("watchedFilms", id);
-        console.log("я здесь");
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToWatched.textContent = REMOVE_FROM_WATCHED;
         refs.addToWatched.classList.add('is-in-storage');
@@ -150,7 +145,6 @@ function onAddToQueueClick(e) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
         addToStorage("queueFilms", id);
-        console.log("queue я тут ");
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = REMOVE_FROM_QUEUE;
         refs.addToQueue.classList.add('is-in-storage');
@@ -159,7 +153,6 @@ function onAddToQueueClick(e) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
         removeFromStorage("queueFilms", id);
-        console.log("queue я здесь");
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = ADD_TO_QUEUE;
         refs.addToQueue.classList.remove('is-in-storage');
