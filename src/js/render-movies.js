@@ -50,22 +50,20 @@ function onClick(evt) {
         evt.target === svgLeft ||
         evt.target === svgPathLeft
       ) {
-        console.log('Вы нажали кнопку влево');
+        console.log('Ви натиснули кнопку вліво');
         filmsApi.pageDecrement();
         if (filmsApi.searchQuery !== null && filmsApi.searchQuery !== '') {
           search();
         } else popular();
-        // console.log(Number(document.querySelector('.numb').textContent));
     }
 
     // const allNumbes = document.querySelectorAll('.numb');
     for (const number of allNumbes) {
         if (evt.target === number) {
-            console.log('Вы нажали кнопку с цифрой');
+            console.log('Ви натиснули кнопку з цифрою');
             filmsApi.setPage(Number(evt.target.textContent));
-            // filmsApi.pageDecrement();
             if (filmsApi.searchQuery !== null && filmsApi.searchQuery !== '') {
-              search();
+                search();
             } else popular();
         }
     }
@@ -75,11 +73,10 @@ function onClick(evt) {
         evt.target === svgRight ||
         evt.target === svgPathRight
     ) {
-        console.log('Вы нажали кнопку вправо');  
+        console.log('Ви натиснули кнопку вправо');  
         filmsApi.pageIncrement();
-        // filmsApi.pageDecrement();
         if (filmsApi.searchQuery !== null && filmsApi.searchQuery !== '') {
-          search();
+            search();
         } else popular();
     }
 }
@@ -104,7 +101,9 @@ function onSearchSubmit(event) {
         };
 
     refs.searchError.classList.add('is-hidden'); 
-    renderGallery(response.results);
+    
+    search();
+    
     ulTag.addEventListener('click', onClick);
     });
 };
