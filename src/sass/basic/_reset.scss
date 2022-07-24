@@ -48,4 +48,12 @@ input {
     outline: 0;
     box-shadow: 0;
   }
-}
+};
+
+form:hover,
+form:focus,
+form:active {
+  outline: 0;
+  box-shadow: 0;
+  background-color: transparent;
+};
