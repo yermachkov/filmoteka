@@ -3,7 +3,7 @@ import FilmsApiService from "./fetch-api";
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-const arrayUrlTrailers = []
+let arrayUrlTrailers = [];
 const filmsApiService = new FilmsApiService();
 
 let id;
@@ -20,18 +20,19 @@ async function onImgClick(e) {
     if(e.target.nodeName !== 'IMG'){
         return
     }
-    id = e.target.dataset.id
+    id = e.target.dataset.id;
     await getTrailerModal(id);
 }
 
 const getTrailerModal = async (filmID) => {
     try {
         const trailerData = await filmsApiService.fetchTrailerById(filmID);
+        arrayUrlTrailers = [];
         createYoutubeUrl(trailerData);
         setTimeout(() => {
             refs.watchTrailer = document.querySelector('.player');
             refs.watchTrailer.addEventListener('click', onOpenTrailerModal);
-        }, 300)
+        }, 500)
     }
     catch (error) {
         console.log(error.message);
@@ -50,7 +51,7 @@ function createYoutubeUrl(data) {
 
 function onOpenTrailerModal(){
     const openTrailer = basicLightbox.create(`
-    <iframe width="320" height="240" src='${youtubeUrl}'frameborder="0" allowfullscreen class="trailer_video"></iframe>`);
+    <iframe src='${youtubeUrl}'frameborder="0" allowfullscreen class="trailer_video"></iframe>`);
 
-openTrailer.show();
+    openTrailer.show();
 }
