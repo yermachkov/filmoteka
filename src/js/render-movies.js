@@ -25,7 +25,6 @@ function onClick(evt) {
   if (evt.target.nodeName !== 'LI') {
     return;
   }
-  console.log(evt.target);
   refs.gallery.innerHTML = '';
   const allNumbes = document.querySelectorAll('.numb');
   const arrowRight = document.querySelector('.arrow-right');
