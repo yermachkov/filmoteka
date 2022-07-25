@@ -107,6 +107,7 @@ header {
 }
 
 .header-form {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -145,21 +146,17 @@ header {
 .header-form__btn {
   background-color: transparent;
   border: none;
+  position: absolute;
+    right: -6px;
+    
+    @include tabl {
+      right: 178px;
+    }
+    
+    @include desk {
+      right: 404px;
+    } 
 }
-
-// .header-form__icon{
-//   position: absolute;
-//   top: 2px;
-//   right: 0;
-
-//   @include tabl {
-//     right: 188px;
-//   }
-
-//   @include desk {
-//     right: 414px;
-//   }
-// }
 
 .header-form__error-text {
   margin-top: 16px;
