@@ -23,3 +23,13 @@ const opts = {
 };
 
 const spinner = new Spinner(opts).spin(spinnerDIV);
+
+function viewSpinner() {
+  spinnerDIV.classList.remove('is-hidden');
+}
+
+function hideSpinner() {
+  spinnerDIV.classList.add('is-hidden');
+}
+
+export { viewSpinner, hideSpinner };
