@@ -3,3 +3,4 @@ import './js/footerModal';
 import './js/spinner';
 // import './js/film-modal';
 import './js/color-change-header-btn';
+import './js/library-render';
