@@ -1,5 +1,7 @@
 import './js/pagination';
 import './js/footerModal';
+import './js/team-data';
+import './js/render-team-card';
 import './js/spinner';
 // import './js/film-modal';
 import './js/color-change-header-btn';
