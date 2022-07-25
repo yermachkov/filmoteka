@@ -2,7 +2,7 @@ export {teamDAta}
 
 const teamDAta = [
     {
-    img: '../images/teams-photo/0-02-05-6ae652b9a9208aaabb65a472036d85a105d18b87d6b382b8e29ca21ae03fcd35_1c6daaf6dfb553.jpg',
+    img: 'https://media-exp1.licdn.com/dms/image/C4E03AQFw7j6VdVuDIg/profile-displayphoto-shrink_400_400/0/1658656081877?e=1664409600&v=beta&t=oRTuvTifHaGmpA_STBlrxaNuMRCoeZ9ibo3SQGWjcls',
     alt: "Valeriy Semko photo",
   
     name: 'Valeriy Semko',
