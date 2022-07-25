@@ -11,8 +11,8 @@ const refs = {
 }
 
 const fetchApi = new FilmsApiService();
-const queueMovies = load(QUEUE_KEY);
-const watchedMovies = load(WATCHED_KEY);
+// const queueMovies = load(QUEUE_KEY);
+// const watchedMovies = load(WATCHED_KEY);
 
 onWatchedClick();
 
@@ -22,6 +22,7 @@ refs.queueBtn.addEventListener('click', onQueueClick);
 
 function onWatchedClick() {
   clearLibraryGallery();
+  const watchedMovies = load(WATCHED_KEY);
   watchedMovies.map(movieId =>
     fetchApi.fetchFilmById(movieId).then(response => {
       renderLibrary(response);
@@ -31,6 +32,7 @@ function onWatchedClick() {
 
 function onQueueClick() {
   clearLibraryGallery();
+  const queueMovies = load(QUEUE_KEY);
   queueMovies.map(movieId =>
   fetchApi.fetchFilmById(movieId).then(response => {
   renderLibrary(response);

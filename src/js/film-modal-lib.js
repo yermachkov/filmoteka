@@ -8,6 +8,8 @@ import {
 } from './storage';
 import { inStorageWatched } from "./storage";
 import { inStorageQueue } from "./storage";
+import { cardDelete, cardAdding } from "./animation-card-library";
+import { $ } from 'jquery';
 
 const filmsApiService = new FilmsApiService();
 let id;
@@ -47,8 +49,8 @@ const getFilmModal = async (filmID) => {
     try {
         const data = await filmsApiService.fetchFilmById(filmID);
         const listOfGenders = await data.genres.map(genre => genre.name).join(', ');
-        const filmData = {...data, listOfGenders};
-        // console.log(filmData);
+        const filmData = { ...data, listOfGenders };
+        
         markup = filmModalMarkup(filmData);
         refs.backdrop.innerHTML = markup;
         
@@ -113,8 +115,6 @@ function removeAllEventListeners() {
 function onAddToWatchedClick(e) {
     e.preventDefault();
     id = e.target.dataset.modalaction;
-    console.log(id);
-    console.log("Ви натиснули на кнопку WATCHED, ID цієї картки - ", id);
     if (localStorage.getItem("watchedFilms") == null) {
         addToStorageWhenNull("watchedFilms", id);
     }
@@ -122,12 +122,14 @@ function onAddToWatchedClick(e) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
         addToStorage("watchedFilms", id);
+        cardAdding(id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToWatched.textContent = REMOVE_FROM_WATCHED;
         refs.addToWatched.classList.add('is-in-storage');
     } else {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
+        cardDelete(id);
         removeFromStorage("watchedFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToWatched.textContent = ADD_TO_WATCHED;
@@ -137,13 +139,13 @@ function onAddToWatchedClick(e) {
 
 function onAddToQueueClick(e) {
     e.preventDefault();
-    console.log("Ви натиснули на кнопку QUEUE, ID цієї картки - ", id);
     if (localStorage.getItem("queueFilms") == null) {
         addToStorageWhenNull("queueFilms", id);
     }
     if (!inStorageQueue(id)) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
+        cardAdding(id);
         addToStorage("queueFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = REMOVE_FROM_QUEUE;
@@ -152,6 +154,8 @@ function onAddToQueueClick(e) {
     } else {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
+        
+        cardDelete(id);
         removeFromStorage("queueFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = ADD_TO_QUEUE;
