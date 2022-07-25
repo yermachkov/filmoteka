@@ -55,6 +55,15 @@ export default class FilmsApiService {
     }
   }
 
+  async fetchTrailerById(id) {
+    try {
+      const response = await axios.get(`movie/${id}/videos?api_key=${API_KEY}&language=en-US/`);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   resetPage() {
     this.page = 1;
   }
