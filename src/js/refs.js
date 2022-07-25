@@ -6,5 +6,5 @@ export const refs = {
   headerButtons: document.querySelector('.header__buttons'),
   gallery: document.querySelector('.gallery__list'),
   rate: document.querySelector('.info-rate'),
-    
+  libraryGallery: document.querySelector('.library-gallery__list')
 }
