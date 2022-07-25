@@ -24,9 +24,14 @@ export default function element(totalPages, page) {
   }
 
   if (page > 2 && page != 3) {
-    liTag += `<li class="numb">1</li>`; //onclick="pagination(totalPages, 1)"
-    if (page > 4) {
-      liTag += `<li class="dots">...</li>`;
+    if (totalPages >= page && totalPages > 5) {
+      liTag += `<li class="numb">1</li>`; //onclick="pagination(totalPages, 1)"
+      if (page > 4 && totalPages > 7) {
+        liTag += `<li class="dots">...</li>`;
+      }
+      if (page > 4 && totalPages === 7) {
+        liTag += `<li class="numb">2</li>`;
+      }
     }
   }
 
@@ -59,9 +64,17 @@ export default function element(totalPages, page) {
     liTag += `<li class="numb ${activeLi}" >${pageLength}</li>`; //onclick="pagination(totalPages, ${pageLength})"
   }
 
-  if (page < totalPages - 1 && page != totalPages - 2) {
-    if (page < totalPages - 3) {
+  if (
+    page < totalPages - 1 &&
+    page != totalPages - 2 &&
+    totalPages >= totalPages - 1 &&
+    totalPages > 5
+  ) {
+    if (age < totalPages - 3 && totalPages > 7) {
       liTag += `<li class="dots">...</li>`;
+    }
+    if (page < totalPages - 3 && totalPages === 7) {
+      liTag += `<li class="numb" >${totalPages - 1}</li>`;
     }
     liTag += `<li class="numb" >${totalPages}</li>`; //onclick="pagination(totalPages, ${totalPages})"
   }
