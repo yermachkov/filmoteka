@@ -5,5 +5,6 @@ import './js/team-data';
 import './js/render-team-card';
 import './js/spinner';
 import './js/film-modal';
+import './js/trailer-modal';
 import './js/get-genres';
 import './js/render-pagination';
