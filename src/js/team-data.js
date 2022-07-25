@@ -39,12 +39,12 @@ const teamDAta = [
 
     {
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: "кто-то тут есть",
+    alt: "Inna Vinogradova photo",
   
-    name: 'Maksym Kidanov',
+    name: 'Inna Vinogradova',
     pos: "Developer",
 
-    git: 'https://github.com/Eldiwr',
+    git: 'https://github.com/innavynogradova',
     linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
     insta: 'https://www.instagram.com/eldiwr/',
     },
