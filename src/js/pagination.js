@@ -1,10 +1,5 @@
-import FilmsApiService from './fetch-api';
-const fetchApi = new FilmsApiService();
 const ulTag = document.querySelector('.pagination ul');
 
-let page = fetchApi.page;
-
-// const totalPages = 20;
 export default function element(totalPages, page) {
   let liTag = '';
   let activeLi;
@@ -70,7 +65,7 @@ export default function element(totalPages, page) {
     totalPages >= totalPages - 1 &&
     totalPages > 5
   ) {
-    if (age < totalPages - 3 && totalPages > 7) {
+    if (page < totalPages - 3 && totalPages > 7) {
       liTag += `<li class="dots">...</li>`;
     }
     if (page < totalPages - 3 && totalPages === 7) {
