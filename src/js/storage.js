@@ -32,9 +32,9 @@ const addToStorageWhenNull = (key, value) => {
 
 const addToStorage = (key, value) => {
     let currArray = [...JSON.parse(localStorage.getItem(key))];
-    console.log(currArray);
+    
     currArray.push(value);
-    console.log(currArray);
+    
     
     try {
       const stringOfData = JSON.stringify(currArray);
