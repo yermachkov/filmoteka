@@ -27,6 +27,7 @@ async function onImgClick(e) {
 const getTrailerModal = async (filmID) => {
     try {
         const trailerData = await filmsApiService.fetchTrailerById(filmID);
+        youtubeUrl = null;
         arrayUrlTrailers = [];
         createYoutubeUrl(trailerData);
         setTimeout(() => {
@@ -43,13 +44,17 @@ function createYoutubeUrl(data) {
     data.results.forEach(obj => {
         if (obj.name.includes('Official Trailer')) {
             const youtubeKey = obj.key;
-            arrayUrlTrailers.push(`https://www.youtube.com/embed/${youtubeKey}`)
+            arrayUrlTrailers.push(`https://www.youtube.com/embed/${youtubeKey}`);
             youtubeUrl = arrayUrlTrailers[0];
         }
     });
 }
 
 function onOpenTrailerModal(){
+    if (youtubeUrl == null) {
+        refs.watchTrailer.textContent = 'sorry, trailer is not found';
+        return
+    }
     const openTrailer = basicLightbox.create(`
     <iframe src='${youtubeUrl}'frameborder="0" allowfullscreen class="trailer_video"></iframe>`);
 
