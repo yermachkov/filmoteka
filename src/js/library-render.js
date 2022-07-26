@@ -1,6 +1,7 @@
 import FilmsApiService from './fetch-api';
 import { load } from './local-storage-service';
 import { renderLibrary, clearLibraryGallery } from './templates/render-gallery';
+import { viewSpinner, hideSpinner } from './spinner';
 
 const WATCHED_KEY = 'watchedFilms';
 const QUEUE_KEY = 'queueFilms';
@@ -33,28 +34,38 @@ function onWatchedClick() {
     renderNotification('watched');
     return;
   }
-  
-  watchedMovies.map(movieId =>
+ 
+  viewSpinner();
+  setTimeout(() => {
+    watchedMovies.map(movieId =>
     fetchApi.fetchFilmById(movieId).then(response => {
       renderLibrary(response);
     })
-  )
+    )
+  hideSpinner();
+  }, 500);
+   
+
 };
 
 function onQueueClick() {
   removeNotification();
   clearLibraryGallery();
-
+  
 if (queueMovies.length === 0) {
     renderNotification('queue');
     return;
   }
 
+  viewSpinner();
+  setTimeout(() => {
   queueMovies.map(movieId =>
   fetchApi.fetchFilmById(movieId).then(response => {
-  renderLibrary(response);
-  })
-)
+    renderLibrary(response);  
+  })  
+    )
+  hideSpinner();
+    }, 500);
 };
 
 
