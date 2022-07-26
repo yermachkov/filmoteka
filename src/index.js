@@ -7,3 +7,4 @@ import './js/spinner';
 import './js/film-modal';
 import './js/trailer-modal';
 import './js/get-genres';
+import './js/arrow';

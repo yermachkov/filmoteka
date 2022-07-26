@@ -1,0 +1,62 @@
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 32px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid red;
+  border-radius: 30px;
+  text-align: center;
+  color: red;
+}
+
+.text-field {
+  padding: 10px 30px;
+  margin: 20px 0;
+  border: 2px solid red;
+  border-radius: 10px;
+  font-size: 12pt;
+  color: red;
+}
+
+.btn-style {
+  padding: 10px 20px;
+  border: 1px solid red;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+}
+
+.btn-style:hover {
+  background-color: white;
+  color: red;
+}
+
+.an-btn {
+  margin-top: 10px;
+  border: 0;
+  background-color: white;
+  color: red;
+  font-size: 11pt;
+}
+
+#register-form {
+  display: none;
+}
+
+#result-box {
+  display: none;
+}
+#result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14pt;
+  color: white;
+}
