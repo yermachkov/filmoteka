@@ -13,7 +13,7 @@ function cardDelete(id) {
         'margin-left': '-16px',
         'font-size': "0px",
         'opacity': '0',
-    }, 400, function () {
+    }, 700, function () {
 
         $(`[data-id="${id}"]`).remove();
     });
@@ -26,30 +26,25 @@ function cardAdding(id) {
 }
     
 function cardDeleteWatched(id) {
-    if (btnWatched.classList.contains('current__button')) {
-        console.log(btnWatched.classList.contains('current__button'))
-        cardDelete(id);
-        
+    if (btnWatched.classList.contains('current__button')) {    
+        cardDelete(id);        
     }
 }
 
 function cardAddingWatched(id) {
     if (btnWatched.classList.contains('current__button')) {
-        console.log(btnWatched.classList.contains('current__button'))
         cardAdding(id);
     }
 }
 
 function cardDeleteQueue(id) {
     if (btnQueue.classList.contains('current__button')) {
-        console.log((btnQueue.classList.contains('current__button')))
         cardDelete(id);
     }
 }
 
 function cardAddingQueue(id) {
     if (btnQueue.classList.contains('current__button')) {
-        console.log((btnQueue.classList.contains('current__button')))
         cardAdding(id);
     }
 }
