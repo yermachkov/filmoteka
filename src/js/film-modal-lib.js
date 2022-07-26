@@ -8,7 +8,7 @@ import {
 } from './storage';
 import { inStorageWatched } from "./storage";
 import { inStorageQueue } from "./storage";
-import { cardDelete, cardAdding } from "./animation-card-library";
+import { cardDeleteWatched, cardAddingWatched, cardDeleteQueue, cardAddingQueue} from "./animation-card-library";
 import { $ } from 'jquery';
 
 const filmsApiService = new FilmsApiService();
@@ -122,18 +122,20 @@ function onAddToWatchedClick(e) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
         addToStorage("watchedFilms", id);
-        cardAdding(id);
+
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToWatched.textContent = REMOVE_FROM_WATCHED;
         refs.addToWatched.classList.add('is-in-storage');
+        cardAddingWatched(id);
     } else {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
-        cardDelete(id);
+
         removeFromStorage("watchedFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToWatched.textContent = ADD_TO_WATCHED;
         refs.addToWatched.classList.remove('is-in-storage');
+        cardDeleteWatched(id);
     }
 }
 
@@ -145,21 +147,22 @@ function onAddToQueueClick(e) {
     if (!inStorageQueue(id)) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
-        cardAdding(id);
+
         addToStorage("queueFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = REMOVE_FROM_QUEUE;
         refs.addToQueue.classList.add('is-in-storage');
-
+        cardAddingQueue(id);
     } else {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // видаляємо наш id з масиву та записуємо дані до localStorage
-        
-        cardDelete(id);
+
+
         removeFromStorage("queueFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = ADD_TO_QUEUE;
         refs.addToQueue.classList.remove('is-in-storage');
+        cardDeleteQueue(id)
     }
 }
 
@@ -202,3 +205,6 @@ function determineButtonStateWhenOpenModal() {
     }
 }
 
+        // if (refs.btnWatched.classList.contains('current__button')) {
+        //     console.log('СУКА. ДА ЗА ЧТО!');
+        // }
