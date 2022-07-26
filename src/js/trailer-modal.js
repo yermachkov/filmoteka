@@ -42,7 +42,7 @@ const getTrailerModal = async (filmID) => {
 
 function createYoutubeUrl(data) {
     data.results.forEach(obj => {
-        if (obj.name.includes('Official Trailer')) {
+        if (obj.name.includes('Official')) {
             const youtubeKey = obj.key;
             arrayUrlTrailers.push(`https://www.youtube.com/embed/${youtubeKey}`);
             youtubeUrl = arrayUrlTrailers[0];
