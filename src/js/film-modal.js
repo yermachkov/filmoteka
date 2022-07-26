@@ -113,8 +113,8 @@ function removeAllEventListeners() {
 function onAddToWatchedClick(e) {
     e.preventDefault();
     id = e.target.dataset.modalaction;
-    console.log(id);
-    console.log("Ви натиснули на кнопку WATCHED, ID цієї картки - ", id);
+    // console.log(id);
+    // console.log("Ви натиснули на кнопку WATCHED, ID цієї картки - ", id);
     if (localStorage.getItem("watchedFilms") == null) {
         addToStorageWhenNull("watchedFilms", id);
     }
@@ -137,13 +137,14 @@ function onAddToWatchedClick(e) {
 
 function onAddToQueueClick(e) {
     e.preventDefault();
-    console.log("Ви натиснули на кнопку QUEUE, ID цієї картки - ", id);
+    // console.log("Ви натиснули на кнопку QUEUE, ID цієї картки - ", id);
     if (localStorage.getItem("queueFilms") == null) {
         addToStorageWhenNull("queueFilms", id);
     }
     if (!inStorageQueue(id)) {
         // отримуємо дані з localStorage, розпарсуємо дані у масив (watchedArray)
         // додаємо новий id до нього та записуємо до localStorage
+        
         addToStorage("queueFilms", id);
         // змінюємо назву та стан активності кнопок після кліку
         refs.addToQueue.textContent = REMOVE_FROM_QUEUE;
