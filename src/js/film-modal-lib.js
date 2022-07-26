@@ -52,6 +52,7 @@ const getFilmModal = async (filmID) => {
         const listOfGenders = await data.genres.map(genre => genre.name).join(', ');
         const filmData = { ...data, listOfGenders };
         
+        document.body.style.overflow = "hidden";
         markup = filmModalMarkup(filmData);
         refs.backdrop.innerHTML = markup;
         
@@ -80,6 +81,7 @@ function onCloseFilmModal(e) {
     refs.gallery.addEventListener('click', onOpenFilmModal);
     toggleModal();
     refs.backdrop.innerHTML = "";
+    document.body.style.overflow = "";
     removeAllEventListeners();
 }
 
@@ -89,6 +91,7 @@ function onEscapeClose(e) {
         refs.gallery.addEventListener('click', onOpenFilmModal);
         toggleModal();
         refs.backdrop.innerHTML = "";
+        document.body.style.overflow = "";
         removeAllEventListeners();
     }
 }
@@ -99,6 +102,7 @@ function onBackdropClose(e) {
         refs.gallery.addEventListener('click', onOpenFilmModal);
         toggleModal();
         refs.backdrop.innerHTML = "";
+        document.body.style.overflow = "";
         removeAllEventListeners();
     }
 }
