@@ -62,15 +62,15 @@ const teamDAta = [
     },
 
     {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: "кто-то тут есть",
-  
-    name: 'Maksym Kidanov',
+    img: 'https://media-exp1.licdn.com/dms/image/C4E03AQGnyfXuFLaauQ/profile-displayphoto-shrink_800_800/0/1658861308186?e=1664409600&v=beta&t=uxurf_r0QKkgwErIlBTLZk4DgcjOkjq9w6v-ONHiogE',
+    alt: "Mariia Shulha",
+    
+    name: 'Mariia Shulha',
     pos: "Developer",
 
-    git: 'https://github.com/Eldiwr',
-    linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
-    insta: 'https://www.instagram.com/eldiwr/',
+    git: 'https://github.com/Mara-ya',
+    linked: 'https://www.linkedin.com/in/mariia-shulha-1936aa128/',
+    insta: 'https://www.instagram.com/mara_ya_/',
     },
 
     {
