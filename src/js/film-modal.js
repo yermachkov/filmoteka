@@ -52,6 +52,7 @@ const getFilmModal = async (filmID) => {
         markup = filmModalMarkup(filmData);
         refs.backdrop.innerHTML = markup;
         
+        document.body.style.overflow = "hidden";
         refs.closeFilmModalBtn = document.querySelector("[data-modal-close]");
         refs.addToWatched = document.querySelector(".add-to-watched");
         refs.addToQueue = document.querySelector(".add-to-queue");
@@ -77,6 +78,7 @@ function onCloseFilmModal(e) {
     refs.gallery.addEventListener('click', onOpenFilmModal);
     toggleModal();
     refs.backdrop.innerHTML = "";
+    document.body.style.overflow = "";
     removeAllEventListeners();
 }
 
@@ -86,6 +88,7 @@ function onEscapeClose(e) {
         refs.gallery.addEventListener('click', onOpenFilmModal);
         toggleModal();
         refs.backdrop.innerHTML = "";
+        document.body.style.overflow = "";
         removeAllEventListeners();
     }
 }
@@ -96,6 +99,7 @@ function onBackdropClose(e) {
         refs.gallery.addEventListener('click', onOpenFilmModal);
         toggleModal();
         refs.backdrop.innerHTML = "";
+        document.body.style.overflow = "";
         removeAllEventListeners();
     }
 }
