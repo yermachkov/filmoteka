@@ -30,35 +30,36 @@ export function filmModalMarkup({poster_path, title, vote_average, vote_count, p
         </div>
     
         <div class="modal__content">
-            <h2 class="modal__content-title">${title}</h2>
-            <table class="modal__content-info">
-                <tr>
-                    <td class="modal__content-name">Vote / Votes</td>
-                    <td class="modal__content-name-value">
-                        <span class="modal__content-rate">${vote}</span>
-                        /
-                        <span class="modal__content-rates">${vote_count}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="modal__content-name">Popularity</td>
-                    <td class="modal__content-name-value">${pop}</td>
-                </tr>
-                <tr>
-                    <td class="modal__content-name">Original Title</td>
-                    <td class="modal__content-name-value--title">${originalTitle}</td>
-                </tr>
-                <tr>
-                    <td class="modal__content-name">Genre</td>
-                    <td class="modal__content-name-value">${genres}</td>
-                </tr>
-            </table>
-        
-            <div class="modal__about">
-                <h3 class="modal__about-title">About</h3>
-                <p class="modal__about-description">${description}</p>
+            <div class="modal__content-wrap">
+                <h2 class="modal__content-title">${title}</h2>
+                <table class="modal__content-info">
+                    <tr>
+                        <td class="modal__content-name">Vote / Votes</td>
+                        <td class="modal__content-name-value">
+                            <span class="modal__content-rate">${vote}</span>
+                            /
+                            <span class="modal__content-rates">${vote_count}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="modal__content-name">Popularity</td>
+                        <td class="modal__content-name-value">${pop}</td>
+                    </tr>
+                    <tr>
+                        <td class="modal__content-name">Original Title</td>
+                        <td class="modal__content-name-value--title">${originalTitle}</td>
+                    </tr>
+                    <tr>
+                        <td class="modal__content-name">Genre</td>
+                        <td class="modal__content-name-value">${genres}</td>
+                    </tr>
+                </table>
+            
+                <div class="modal__about">
+                    <h3 class="modal__about-title">About</h3>
+                    <p class="modal__about-description">${description}</p>
+                </div>
             </div>
-        
             <div class="modal__btns">
                 <div class="modal__btns-wrapper">
                     <button class="modal__btn add-to-watched" type="button" data-modalaction="${id}">
