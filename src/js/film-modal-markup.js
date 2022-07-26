@@ -12,6 +12,12 @@ export function filmModalMarkup({poster_path, title, vote_average, vote_count, p
     const genres = listOfGenders
         ? listOfGenders
         : 'Genres did not marked';
+    const vote = vote_average > 0.1
+        ? vote_average.toFixed(1)
+        : "0";
+    const pop = popularity > 0.1
+        ? popularity.toFixed(1)
+        : "0";
 
     return `
     <div class="modal" data-modal-id="${id}">
@@ -29,14 +35,14 @@ export function filmModalMarkup({poster_path, title, vote_average, vote_count, p
                 <tr>
                     <td class="modal__content-name">Vote / Votes</td>
                     <td class="modal__content-name-value">
-                        <span class="modal__content-rate">${vote_average}</span>
+                        <span class="modal__content-rate">${vote}</span>
                         /
                         <span class="modal__content-rates">${vote_count}</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="modal__content-name">Popularity</td>
-                    <td class="modal__content-name-value">${popularity}</td>
+                    <td class="modal__content-name-value">${pop}</td>
                 </tr>
                 <tr>
                     <td class="modal__content-name">Original Title</td>

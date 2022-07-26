@@ -30,7 +30,6 @@ refs.gallery.addEventListener('click', onOpenFilmModal);
 
 async function onOpenFilmModal(e) {
     e.preventDefault();
-    refs.gallery.removeEventListener('click', onOpenFilmModal);
     id = e.target.dataset.id;
             
     if (e.target.nodeName !== 'IMG') {
@@ -38,7 +37,8 @@ async function onOpenFilmModal(e) {
     }
     toggleModal();
     await getFilmModal(id);
-        
+
+    refs.gallery.removeEventListener('click', onOpenFilmModal);
     refs.addToWatched.addEventListener('click', onAddToWatchedClick);
     refs.addToQueue.addEventListener('click', onAddToQueueClick);
 }
