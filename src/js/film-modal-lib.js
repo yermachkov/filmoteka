@@ -25,6 +25,7 @@ let refs = {
     closeFilmModalBtn: "",
     addToWatched: "",
     addToQueue: "",
+    player: "",
 }
 
 checkItemInStorage("watchedFilms", "queueFilms", []);
@@ -59,6 +60,8 @@ const getFilmModal = async (filmID) => {
         refs.closeFilmModalBtn = document.querySelector("[data-modal-close]");
         refs.addToWatched = document.querySelector(".add-to-watched");
         refs.addToQueue = document.querySelector(".add-to-queue");
+        refs.player = document.querySelector(".player");
+        refs.player.classList.add("is-hidden");
         
         await onWatchedButtonTextWhenOpenModal(filmID);
         await onQueueButtonTextWhenOpenModal(filmID);

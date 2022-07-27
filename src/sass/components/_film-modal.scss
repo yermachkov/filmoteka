@@ -11,6 +11,7 @@
     font-size: 12px;
     font-weight: 500;
     background-color: white;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
     
     color: black;
     transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -20,20 +21,18 @@
         display: flex;
         justify-content: space-between;
         width: 704px;
-        min-height: 552px;
-        max-height: 100vh;
-        overflow: auto;
+        max-height: 552px;
         padding: 40px 25px;
         border-radius: 12px;
         gap: 25px;
+        overflow-y:hidden;
     }
   
     @include desk {
-        min-width: 806px;
-        min-height: 558px;
+        width: 806px;
+        max-height: 558px;
         padding: 40px 30px;
         gap: 30px;
-        overflow: auto;
     }
   }
   
@@ -77,7 +76,14 @@
     @include desk {
       width: 60%;
     }
-  
+
+    &-wrap {
+        margin-bottom: 20px;
+        @include tabl {
+            max-height: 340px;
+            overflow-y: scroll;
+        }
+}
   
     &-title {
         font-size: 20px;
@@ -154,7 +160,7 @@
 }
   
 .modal__about {
-    margin-bottom: 20px;
+    
     font-style: normal;
     font-size: 12px;
     line-height: 20px;
@@ -191,10 +197,12 @@
         // display: block;
         justify-content: flex-start;
         align-items: flex-start;
+        margin-bottom: 15px;
     }
 }
 
 .modal__btn {
+    display: block;
     height: 44px;
     width: 110px;
     padding: 7px 10px 5px 10px;
@@ -211,7 +219,6 @@
 
     @include tabl {
         width: 125px;
-        margin-bottom: 15px;
     }
 
     @include desk {
