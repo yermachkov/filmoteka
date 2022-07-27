@@ -5,6 +5,9 @@ body {
   font-size: 12px;
   line-height: calc(16 / 12);
   background-color: #ffffff;
+
+  position: relative;
+  min-height: 100vh;
 }
 
 section {
@@ -15,6 +18,10 @@ section {
       margin-top: 60px;
       margin-bottom: 60px;
   }
+}
+
+li {
+  cursor: pointer;
 }
 
 .btn {
