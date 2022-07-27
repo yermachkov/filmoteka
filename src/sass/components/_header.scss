@@ -4,9 +4,8 @@ header {
   margin: 0 auto;
   align-items: center;
   text-align: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)),
-      url(/src/images/header-bg/header-home-bg-mob.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(/src/images/header-bg/header-home-bg-mob.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -16,36 +15,37 @@ header {
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.56),
-            rgba(0, 0, 0, 0.56)),
-          url(/src/images/header-bg/header-home-bg-mob-2x.jpeg);
-    }
-    @include tabl {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)),
-        url(/src/images/header-bg/header-home-bg-tab.jpeg);
-  
-      @media (min-device-pixel-ratio: 2),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/src/images/header-bg/header-home-bg-mob-2x.jpeg);
+  }
+  @include tabl {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/src/images/header-bg/header-home-bg-tab.jpeg);
+
+    @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56),
-            rgba(0, 0, 0, 0.56)),
-          url(/src/images/header-bg/header-home-bg-tab-2x.jpeg);
-      }
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(/src/images/header-bg/header-home-bg-tab-2x.jpeg);
     }
-    @include desk {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)),
-        url(/src/images/header-bg/header-home-bg-desk.jpeg);
-  
-      @media (min-device-pixel-ratio: 2),
+  }
+  @include desk {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/src/images/header-bg/header-home-bg-desk.jpeg);
+
+    @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56),
-            rgba(0, 0, 0, 0.56)),
-          url(/src/images/header-bg/header-home-bg-desk-2x.jpeg);
-      }
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(/src/images/header-bg/header-home-bg-desk-2x.jpeg);
     }
+  }
 }
 
 .header-nav {
@@ -83,7 +83,7 @@ header {
   display: flex;
 }
 
-.header-nav__item { 
+.header-nav__item {
   & + & {
     margin-left: 40px;
   }
@@ -96,7 +96,7 @@ header {
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: -2px;
@@ -147,15 +147,15 @@ header {
   background-color: transparent;
   border: none;
   position: absolute;
-    right: -6px;
-    
-    @include tabl {
-      right: 178px;
-    }
-    
-    @include desk {
-      right: 404px;
-    } 
+  right: -6px;
+
+  @include tabl {
+    right: 178px;
+  }
+
+  @include desk {
+    right: 404px;
+  }
 }
 
 .header-form__error-text {
@@ -164,6 +164,8 @@ header {
   font-size: 14px;
   line-height: calc(16 / 14);
   color: var(--header-accent-color);
+  visibility: visible;
+  transition: visibility ease 0.5s, opacity 0.5s ease;
 
   @include tabl {
     margin-top: 20px;

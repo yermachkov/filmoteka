@@ -73,6 +73,9 @@ function onSearchSubmit(event) {
 
   if (filmsApi.searchQuery === '' || filmsApi.searchQuery === ' ') {
     refs.searchError.classList.remove('is-hidden');
+    setTimeout(() => {
+      refs.searchError.classList.add('is-hidden');
+    }, 3000);
     return;
   }
 
@@ -97,6 +100,9 @@ function onSearchSubmit(event) {
 
       search();
       refs.searchError.classList.remove('is-hidden');
+      setTimeout(() => {
+        refs.searchError.classList.add('is-hidden');
+      }, 3000);
       return;
     }
 
