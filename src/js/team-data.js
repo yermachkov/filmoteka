@@ -38,15 +38,15 @@ const teamDAta = [
     },
 
     {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
+    img: 'https://avatars.githubusercontent.com/u/96316627?v=4',
     alt: "Inna Vinogradova photo",
   
-    name: 'Inna Vinogradova',
+    name: 'Inna Vynogradova',
     pos: "Developer",
 
     git: 'https://github.com/innavynogradova',
-    linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
-    insta: 'https://www.instagram.com/eldiwr/',
+    linked: 'https://www.linkedin.com/in/inna-vynogradova/',
+    insta: 'https://www.instagram.com/vin_nochka/',
     },
     
     {
