@@ -55,12 +55,18 @@ function onClick(evt) {
 }
 
 refs.searchForm.addEventListener('submit', onSearchSubmit);
+let request = [];
 
 function onSearchSubmit(event) {
   event.preventDefault();
   filmsApi.resetPage();
 
-  filmsApi.query = event.target.elements.userSearchQuery.value.trim();
+  const x = event.target.elements.userSearchQuery.value.trim();
+  request.push(x);
+  localStorage.setItem('respon', JSON.stringify(request));
+  filmsApi.query = x;
+
+  // localStorage.setItem('search', filmsApi.query);
 
   if (filmsApi.searchQuery === '' || filmsApi.searchQuery === ' ') {
     refs.searchError.classList.remove('is-hidden');
@@ -69,15 +75,21 @@ function onSearchSubmit(event) {
 
   filmsApi.fetchFilmsOnSearch().then(response => {
     if (response.total_results === 0) {
+      let y = JSON.parse(localStorage.getItem('respon'));
+      console.log(y);
+      const z = y.length - 2;
+      console.log(y[z]);
+      filmsApi.query = y[z];
+      request.pop();
+      search();
       refs.searchError.classList.remove('is-hidden');
-      ulTag.removeEventListener('click', onClick);
       return;
     }
 
     refs.searchError.classList.add('is-hidden');
 
     search();
-
+    console.log(request);
     ulTag.addEventListener('click', onClick);
   });
 }
