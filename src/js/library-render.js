@@ -16,8 +16,8 @@ const refs = {
 // const isQueueBtnOn = queueBtn.classList.contains('current__button');
 
 const fetchApi = new FilmsApiService();
-const watchedMovies = load(WATCHED_KEY);
-const queueMovies = load(QUEUE_KEY);
+// const watchedMovies = load(WATCHED_KEY);
+// const queueMovies = load(QUEUE_KEY);
 
 
 onWatchedClick();
@@ -29,6 +29,7 @@ refs.queueBtn.addEventListener('click', onQueueClick);
 function onWatchedClick() {
   removeNotification();
   clearLibraryGallery();
+  const watchedMovies = load(WATCHED_KEY);
   
   if (watchedMovies.length === 0) {
     renderNotification('watched');
@@ -51,6 +52,7 @@ function onWatchedClick() {
 function onQueueClick() {
   removeNotification();
   clearLibraryGallery();
+  const queueMovies = load(QUEUE_KEY);
   
 if (queueMovies.length === 0) {
     renderNotification('queue');
