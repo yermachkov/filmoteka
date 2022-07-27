@@ -86,7 +86,7 @@ const teamDAta = [
     },
 
     {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
+    img: 'https://scontent.fiev7-4.fna.fbcdn.net/v/t1.18169-9/13567468_1765874240295153_47491034772043239_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=aAtSmTbHrdwAX_WM-nB&_nc_ht=scontent.fiev7-4.fna&oh=00_AT8o3KTTAUNMuwzjymWHMzezRi4ZsBE1vP4H1frZ4QhlFg&oe=630518C0',
     alt: "кто-то тут есть",
   
     name: 'Maksym Kidanov',
