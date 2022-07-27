@@ -50,15 +50,15 @@ const teamDAta = [
     },
     
     {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: "кто-то тут есть",
+    img: 'https://media-exp1.licdn.com/dms/image/C4E03AQF2U3IzNPRe1A/profile-displayphoto-shrink_200_200/0/1555014574213?e=1664409600&v=beta&t=bGg2pSrz21JLtJLyu5xwZoKTqN2IGy7-8fHK7eGn90M',
+    alt: "Olha Zolotar photo",
   
-    name: 'Maksym Kidanov',
+    name: 'Olha Zolotar',
     pos: "Developer",
 
-    git: 'https://github.com/Eldiwr',
-    linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
-    insta: 'https://www.instagram.com/eldiwr/',
+    git: 'https://github.com/olhazolotar',
+    linked: 'https://www.linkedin.com/in/olhazolotar/',
+    insta: 'https://www.instagram.com/olhazolotar/',
     },
 
     {
