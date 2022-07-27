@@ -37,41 +37,42 @@ const teamDAta = [
     insta: 'https://www.instagram.com',
   },
 
-  {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: 'Inna Vinogradova photo',
 
-    name: 'Inna Vinogradova',
-    pos: 'Developer',
+    {
+    img: 'https://avatars.githubusercontent.com/u/96316627?v=4',
+    alt: "Inna Vinogradova photo",
+  
+    name: 'Inna Vynogradova',
+    pos: "Developer",
 
     git: 'https://github.com/innavynogradova',
-    linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
-    insta: 'https://www.instagram.com/eldiwr/',
-  },
+    linked: 'https://www.linkedin.com/in/inna-vynogradova/',
+    insta: 'https://www.instagram.com/vin_nochka/',
+    },
+    
+    {
+    img: 'https://media-exp1.licdn.com/dms/image/C4E03AQF2U3IzNPRe1A/profile-displayphoto-shrink_200_200/0/1555014574213?e=1664409600&v=beta&t=bGg2pSrz21JLtJLyu5xwZoKTqN2IGy7-8fHK7eGn90M',
+    alt: "Olha Zolotar photo",
+  
+    name: 'Olha Zolotar',
+    pos: "Developer",
 
-  {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: 'кто-то тут есть',
+    git: 'https://github.com/olhazolotar',
+    linked: 'https://www.linkedin.com/in/olhazolotar/',
+    insta: 'https://www.instagram.com/olhazolotar/',
+    },
 
-    name: 'Maksym Kidanov',
-    pos: 'Developer',
+    {
+    img: 'https://media-exp1.licdn.com/dms/image/C4E03AQGnyfXuFLaauQ/profile-displayphoto-shrink_800_800/0/1658861308186?e=1664409600&v=beta&t=uxurf_r0QKkgwErIlBTLZk4DgcjOkjq9w6v-ONHiogE',
+    alt: "Mariia Shulha",
+    
+    name: 'Mariia Shulha',
+    pos: "Developer",
 
-    git: 'https://github.com/Eldiwr',
-    linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
-    insta: 'https://www.instagram.com/eldiwr/',
-  },
-
-  {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: 'кто-то тут есть',
-
-    name: 'Maksym Kidanov',
-    pos: 'Developer',
-
-    git: 'https://github.com/Eldiwr',
-    linked: 'https://www.linkedin.com/in/maksym-kidanov-53b08b21a/',
-    insta: 'https://www.instagram.com/eldiwr/',
-  },
+    git: 'https://github.com/Mara-ya',
+    linked: 'https://www.linkedin.com/in/mariia-shulha-1936aa128/',
+    insta: 'https://www.instagram.com/mara_ya_/',
+    },
 
   {
     img: 'https://avatars.githubusercontent.com/u/95977502?s=400&u=c49c0b5b723955d936d6514b9600aead08c0c3ea&v=4',
@@ -85,9 +86,9 @@ const teamDAta = [
     insta: 'https://www.instagram.com/volk1189p/',
   },
 
-  {
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-    alt: 'кто-то тут есть',
+    {
+    img: 'https://scontent.fiev7-4.fna.fbcdn.net/v/t1.18169-9/13567468_1765874240295153_47491034772043239_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=aAtSmTbHrdwAX_WM-nB&_nc_ht=scontent.fiev7-4.fna&oh=00_AT8o3KTTAUNMuwzjymWHMzezRi4ZsBE1vP4H1frZ4QhlFg&oe=630518C0',
+    alt: "кто-то тут есть",
 
     name: 'Maksym Kidanov',
     pos: 'Developer',

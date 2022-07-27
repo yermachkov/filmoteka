@@ -6,3 +6,4 @@ import './js/spinner';
 import './js/film-modal-lib';
 import './js/color-change-header-btn';
 import './js/library-render';
+import './js/arrow';

@@ -1,3 +1,7 @@
+.library-gallery {
+  min-height: 40vh;
+}
+
 .library-gallery__list {
   margin-left: auto;
   margin-right: auto;
@@ -58,4 +62,44 @@
   line-height: calc(24 / 20);
   text-transform: uppercase;
   color: #000000;
+}
+
+.library__notification {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.33;
+
+  color: #FF6B08;
+  
+  @include desk {
+    font-size: 40px;
+    line-height: calc(24 / 20);
+    }
+}
+
+.library__notification.wrap {
+  margin-top: 30px;
+}
+
+.notification-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #000000;
+
+  @include desk {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
+}
+
+.home-link {
+  color: #FF6B08;
+  text-decoration: underline;
 }
