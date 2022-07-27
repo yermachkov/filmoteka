@@ -52,7 +52,7 @@ function createYoutubeUrl(data) {
 
 function onOpenTrailerModal(){
     if (youtubeUrl == null) {
-        refs.watchTrailer.textContent = 'sorry, trailer is not found';
+        refs.watchTrailer.textContent = 'trailer is not found';
         return
     }
     const openTrailer = basicLightbox.create(`
