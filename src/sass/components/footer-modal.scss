@@ -24,6 +24,7 @@
         background: #F7F7F7;
     
         @media screen and (min-width: 768px) {
+            box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
             max-width: 700px;
             height: auto;
         }
