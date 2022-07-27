@@ -75,7 +75,7 @@ function createNotificationMarkup(listName) {
   return `
   <p class="library__notification">You haven't added movies to ${listName} yet</p>
   <div class="library__notification wrap">
-    <p class="notification-text">Check out trending movies or search specific movie on <a href="../index.html" class="home-link">home page</a>.</p>
+    <p class="notification-text">Check out trending movies or search specific movie on <a href="/src/index.html" class="home-link">home page</a>.</p>
     <p class="notification-text">Just click on movie card and fill your library :)</p>
   </div>
   `
